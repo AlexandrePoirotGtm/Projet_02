@@ -9,6 +9,6 @@ namespace Data
     class Client : Personne
     {
         string Email { get; set; }
-        List<DossierReversation> dossiers { get; set; }
+        List<DossierReversation> Dossiers { get; set; }
     }
 }
