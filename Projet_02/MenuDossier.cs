@@ -8,10 +8,10 @@ using Metier;
 
 namespace Projet_02
 {
-    public class Module2 : ModuleBase<Application>
+    public class MenuDossier : ModuleBase<Application>
     {
 
-        public Module2(Application application, string nomModule)
+        public MenuDossier(Application application, string nomModule)
             : base(application, nomModule)
         {
 
@@ -19,27 +19,25 @@ namespace Projet_02
 
         protected override void InitialiserMenu(Menu menu)
         {
-            menu.AjouterElement(new ElementMenu("1", "Afficher")
+            menu.AjouterElement(new ElementMenu("1", "Afficher Dossier Par Numéro de dossier")
             {
-                FonctionAExecuter = this.Afficher
+                FonctionAExecuter = this.AfficherParNum
             });
-            menu.AjouterElement(new ElementMenu("2", "Nouveau")
+            menu.AjouterElement(new ElementMenu("2", "Afficher voyages par Clients")
             {
-                FonctionAExecuter = this.Nouveau
+                FonctionAExecuter = this.AfficherParClients
             });
             menu.AjouterElement(new ElementMenuQuitterMenu("R", "Revenir au menu principal..."));
         }
 
-      /*  private void Afficher()
+        private void AfficherParNum()
         {
             ConsoleHelper.AfficherEntete("Afficher");
+        }
 
-            ConsoleHelper.AfficherListe(this.liste, strategieAffichageClients);
-        }*/
-
-        private void Nouveau()
+        private void AfficherParClients()
         {
-            ConsoleHelper.AfficherEntete("Nouveau");
+            ConsoleHelper.AfficherEntete("Afficher");
         }
     }
 }
