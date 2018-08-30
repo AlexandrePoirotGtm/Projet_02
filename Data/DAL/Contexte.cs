@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace Data.DAL
 {
-    class Contexte
+    public class Contexte: DbContext
     {
 
     }
