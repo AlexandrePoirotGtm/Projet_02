@@ -12,7 +12,7 @@ namespace Projet_02
         static void Main(string[] args)
         {
             Data.Service.ServiceClient Serv = new Data.Service.ServiceClient();
-            Client cli = new Client();
+            Agence cli = new Agence();
             cli.Adresse = "1 rue des ";
             cli.Civilite = "M";
             cli.Nom = "Doggo";

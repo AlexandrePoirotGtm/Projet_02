@@ -12,6 +12,6 @@ namespace Data
         public TypeAssurance TypeAssurance { get; set; }
         public decimal Montant { get; set; }
 
-        public List<DossierReversation> dossiers { get; set; }
+        public List<DossierReservation> dossiers { get; set; }
     }
 }

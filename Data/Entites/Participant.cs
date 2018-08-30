@@ -8,7 +8,12 @@ namespace Data
 {
     public class Participant : Personne
     {
-        public int NumeroUnique { get; set; }
+        
         public float Reduction { get; set; }
+        //SA MARCHE - CRIS
+        public override string ToString()
+        {
+            return $"({Id}) {Nom.ToUpper()},{Prenom.ToLower()} - Ad. {Adresse}";
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace Data
         public decimal PrixParPersonne { get; set; }
 
         public Destination Destination { get; set; }
-        public List<DossierReversation> Dossiers { get; set; }
+        public List<DossierReservation> Dossiers { get; set; }
 
 
         public void Reserver(int places)

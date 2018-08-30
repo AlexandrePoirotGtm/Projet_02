@@ -20,6 +20,6 @@ namespace Data
         public DateTime DateNaissance { get; set; }
 
         [NotMapped]
-        public int Age { get; set; }
+        public int Age { get; set;}
     }
 }
