@@ -17,15 +17,21 @@ namespace Projet_02
             CouleursConsole.RetourMenu = ConsoleColor.DarkGreen;
         }
 
-        public Module1 Module1 { get; private set; }
-        public Module2 Module2 { get; private set; }
-        public Module3 Module3 { get; private set; }
+        public MenuVoyages MenuVoyages { get; private set; }
+        public MenuDossier MenuDossier { get; private set; }
+        public MenuClient MenuClient { get; private set; }
+        public MenuAgence MenuAgence { get; private set; }
+        public MenuAssurance MenuAssurance { get; private set; }
+        public MenuDestination MenuDestination { get; private set; }
 
         protected override void InitialiserModules()
         {
-            this.Module1 = this.AjouterModule(new Module1(this, "Gerer Voyage"));
-            this.Module2 = this.AjouterModule(new Module2(this, "Gerer Client"));
-            this.Module3 = this.AjouterModule(new Module3(this, "Gerer Dossier"));
+            this.MenuVoyages = this.AjouterModule(new MenuVoyages(this, "Gerer Voyage"));
+            this.MenuDossier = this.AjouterModule(new MenuDossier(this, "Gerer Dossier"));
+            this.MenuClient = this.AjouterModule(new MenuClient(this, "Gerer Client"));
+            this.MenuAgence = this.AjouterModule(new MenuAgence(this, "Gerer Agence"));
+            this.MenuAssurance = this.AjouterModule(new MenuAssurance(this, "Gerer Assurance"));
+            this.MenuDestination = this.AjouterModule(new MenuDestination(this, "Gerer Destination"));
         }
     }
 }

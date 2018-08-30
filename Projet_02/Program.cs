@@ -11,15 +11,6 @@ namespace Projet_02
     {
         static void Main(string[] args)
         {
-            Data.Service.ServiceClient Serv = new Data.Service.ServiceClient();
-            Agence cli = new Agence();
-            cli.Adresse = "1 rue des ";
-            cli.Civilite = "M";
-            cli.Nom = "Doggo";
-            cli.Prenom = "George";
-            cli.DateNaissance = DateTime.Parse("25/04/1995");
-            Serv.CreerClient(cli);
-            Console.ReadKey();
             Application Appli = new Application();
             Appli.Demarrer();
         }

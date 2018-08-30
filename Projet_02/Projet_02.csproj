@@ -54,11 +54,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
-    <Compile Include="Module3 .cs" />
-    <Compile Include="Module2.cs" />
-    <Compile Include="Module1.cs" />
+    <Compile Include="MenuAgence.cs" />
+    <Compile Include="MenuAssurance.cs" />
+    <Compile Include="MenuClient.cs" />
+    <Compile Include="MenuDestination.cs" />
+    <Compile Include="MenuDossier.cs" />
+    <Compile Include="MenuVoyages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sous-menus\SMCreerClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -74,5 +78,6 @@
       <Name>Metier</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
