@@ -14,7 +14,7 @@ namespace Projet_02
             Data.Service.ServiceClient Serv = new Data.Service.ServiceClient();
             Client cli = new Client();
             cli.Adresse = "1 rue des ";
-            cli.Civilité = "M";
+            cli.Civilite = "M";
             cli.Nom = "Doggo";
             cli.Prenom = "George";
             cli.DateNaissance = DateTime.Parse("25/04/1995");
