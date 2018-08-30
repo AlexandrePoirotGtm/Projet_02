@@ -8,13 +8,13 @@ namespace Data
 {
     public abstract class Personne
     {
-        int Id { get; set; }
-        string Civilité { get; set; }
-        string Nom { get; set; }
-        string Prenom { get; set; }
-        string Adresse { get; set; }
-        string Telephone { get; set; }
-        DateTime DateNaissance { get; set; }
-        int Age { get; set; }
+        public int Id { get; set; }
+        public string Civilité { get; set; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+        public string Adresse { get; set; }
+        public string Telephone { get; set; }
+        public DateTime DateNaissance { get; set; }
+        public int Age { get; set; }
     }
 }

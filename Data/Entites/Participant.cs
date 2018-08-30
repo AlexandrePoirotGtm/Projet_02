@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class Participant : Personne
+    public class Participant : Personne
     {
-        int NumeroUnique { get; set; }
-        float Reduction { get; set; }
+        public int NumeroUnique { get; set; }
+        public float Reduction { get; set; }
     }
 }

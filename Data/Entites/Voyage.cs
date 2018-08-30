@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class Voyage
+    public class Voyage
     {
-        int Id { get; set; }
-        DateTime DateAller { get; set; }
-        DateTime DateRetour { get; set; }
-        int PlaceDisponibles { get; set; }
-        decimal PrixParPersonne { get; set; }
+        public int Id { get; set; }
+        public DateTime DateAller { get; set; }
+        public DateTime DateRetour { get; set; }
+        public int PlaceDisponibles { get; set; }
+        public decimal PrixParPersonne { get; set; }
 
-        Destination Destination { get; set; }
-        List<DossierReversation> Dossiers { get; set; }
+        public Destination Destination { get; set; }
+        public List<DossierReversation> Dossiers { get; set; }
 
 
         public void Reserver(int places)

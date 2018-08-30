@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class Assurance
+    public class Assurance
     {
-        int Id { get; set; }
-        TypeAssurance TypeAssurance { get; set; }
-        decimal Montant { get; set; }
+        public int Id { get; set; }
+        public TypeAssurance TypeAssurance { get; set; }
+        public decimal Montant { get; set; }
 
-        List<DossierReversation> dossiers { get; set; }
+        public List<DossierReversation> dossiers { get; set; }
     }
 }

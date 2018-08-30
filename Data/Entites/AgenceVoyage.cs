@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class AgenceVoyage
+    public class AgenceVoyage
     {
-        int Id { get; set; }
-        string Nom { get; set; }
+        public int Id { get; set; }
+        public string Nom { get; set; }
 
-        List<Voyage> Voyages { get; set; }
+        public List<Voyage> Voyages { get; set; }
     }
 }

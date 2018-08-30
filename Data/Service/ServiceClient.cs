@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Data.DAL;
 namespace Data.Service
 {
-    class ServiceClient
+    public class ServiceClient
     {
         /// <summary>
 		/// METODO QUE CRIA UM NOVO CLIENTE

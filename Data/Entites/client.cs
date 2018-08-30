@@ -8,7 +8,7 @@ namespace Data
 {
     public class Client : Personne
     {
-        string Email { get; set; }
-        List<DossierReversation> Dossiers { get; set; }
+        public string Email { get; set; }
+        public List<DossierReversation> Dossiers { get; set; }
     }
 }

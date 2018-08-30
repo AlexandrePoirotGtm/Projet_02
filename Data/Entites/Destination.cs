@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class Destination
+    public class Destination
     {
-        int Id { get; set; }
-        string Continent { get; set; }
-        string Pays { get; set; }
-        string Region { get; set; }
-        string Description { get; set; }
+        public int Id { get; set; }
+        public string Continent { get; set; }
+        public string Pays { get; set; }
+        public string Region { get; set; }
+        public string Description { get; set; }
 
-        List<Voyage> Voyages { get; set; }
+        public List<Voyage> Voyages { get; set; }
     }
 }
