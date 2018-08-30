@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public enum etat
+    public enum Etat
     {
         EnAttente,
         EnCours,
