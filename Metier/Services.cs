@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Metier
 {
-    class AgenceVoyage
+    class Services
     {
-        int Id { get; set; }
-        string Nom { get; set; }
 
-        List<Voyage> Voyages { get; set; }
     }
 }
