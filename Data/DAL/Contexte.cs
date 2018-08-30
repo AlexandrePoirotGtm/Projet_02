@@ -9,6 +9,6 @@ namespace Data.DAL
 {
     public class Contexte: DbContext
     {
-
+        public virtual DbSet<Client> Clients { get; set; }
     }
 }

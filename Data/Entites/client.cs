@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class Client : Personne
+    public class Client : Personne
     {
         string Email { get; set; }
         List<DossierReversation> Dossiers { get; set; }

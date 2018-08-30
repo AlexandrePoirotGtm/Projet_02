@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    abstract class Personne
+    public abstract class Personne
     {
         int Id { get; set; }
         string Civilité { get; set; }

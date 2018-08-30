@@ -59,6 +59,7 @@
     <Compile Include="Entites\Personne.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entites\Voyage.cs" />
+    <Compile Include="Service\ServiceClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
