@@ -11,7 +11,6 @@ namespace Projet_02
     {
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
             Application Appli = new Application();
             Appli.Demarrer();
         }
