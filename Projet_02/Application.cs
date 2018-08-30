@@ -12,7 +12,9 @@ namespace Projet_02
         public Application()
             : base("BO Voyage")
         {
-
+            CouleursConsole.Entete = ConsoleColor.DarkYellow;
+            CouleursConsole.Saisie = ConsoleColor.DarkCyan;
+            CouleursConsole.RetourMenu = ConsoleColor.DarkGreen;
         }
 
         public Module1 Module1 { get; private set; }
