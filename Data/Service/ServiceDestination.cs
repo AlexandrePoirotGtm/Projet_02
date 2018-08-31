@@ -7,12 +7,12 @@ using Data.DAL;
 using System.Data.Entity;
 namespace Data.Service
 {
-    public class ServiceDestination
+    public static class ServiceDestination
     {
         /// <summary>
         /// méthode pour afficher des instances de la table destination
         /// </summary>
-        public IEnumerable<Destination> GetDestinations()
+        public static IEnumerable<Destination> GetDestinations()
         {
             using (var contexte = new Contexte())
             {
@@ -24,7 +24,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour afficher des instances de la table destination
         /// </summary>
-        public Destination GetDestination(int IdDestination)
+        public static Destination GetDestination(int IdDestination)
         {
             using (var contexte = new Contexte())
             {
@@ -37,7 +37,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour créer une nouvelle instance de destination sur la base.
 		/// </summary>
-		public void CreerDestination(Destination d)
+		public static void CreerDestination(Destination d)
         {
             using (var contexte = new Contexte())
             {
@@ -48,7 +48,7 @@ namespace Data.Service
         /// <summary>
 		/// méthode pour effacer une instance de destination sur la base pour son id.
 		/// </summary>
-		public void EffacerDestination(int idDestination)
+		public static void EffacerDestination(int idDestination)
         {
             using (var contexte = new Contexte())
             {
@@ -64,7 +64,7 @@ namespace Data.Service
 		/// méthode pour effacer une instance de destination sur la base pour son OBJ.
 		/// </summary>
         /// <param name="dest">obj destination</param>
-		public void EffacerDestination(Destination dest)
+		public static void EffacerDestination(Destination dest)
         {
             using (var contexte = new Contexte())
             {
@@ -77,7 +77,7 @@ namespace Data.Service
         /// méthode pour Modifier une instance de destination sur la base pour son OBJ.
         /// </summary>
         /// <param name="dest">obj destination</param>
-        public void ModifierDestination(Destination dest)
+        public static void ModifierDestination(Destination dest)
         {
             using (var contexte = new Contexte())
             {
@@ -90,7 +90,7 @@ namespace Data.Service
         /// <summary>
 		/// méthode pour voir si un destination est dans la base. Cherche pour son id.
 		/// </summary>
-		public bool ChercherDestination(int idDestination)
+		public static bool ChercherDestination(int idDestination)
         {
             bool trouver = false;
             using (var contexte = new Contexte())
@@ -105,7 +105,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour filtrer destination par Region.
         /// </summary>
-        public IEnumerable<Destination> FiltrerDestinationRegion(string region)
+        public static IEnumerable<Destination> FiltrerDestinationRegion(string region)
         {            
             using (var contexte = new Contexte())
             {
@@ -119,7 +119,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour filtrer destination par Pays.
         /// </summary>
-        public IEnumerable<Destination> FiltrerDestinationPays(string pays)
+        public static IEnumerable<Destination> FiltrerDestinationPays(string pays)
         {
             using (var contexte = new Contexte())
             {
@@ -132,7 +132,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour filtrer destination par Continent.
         /// </summary>
-        public IEnumerable<Destination> FiltrerDestinationContinent(string continent)
+        public static IEnumerable<Destination> FiltrerDestinationContinent(string continent)
         {
             using (var contexte = new Contexte())
             {

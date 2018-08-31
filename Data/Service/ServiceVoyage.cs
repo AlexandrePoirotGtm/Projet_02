@@ -7,12 +7,12 @@ using Data.DAL;
 using System.Data.Entity;
 namespace Data.Service
 {
-    public class ServiceVoyage
+    public static class ServiceVoyage
     {
         /// <summary>
         /// méthode pour afficher des instances de la table voyage
         /// </summary>
-        public IEnumerable<Voyage> GetVoyages()
+        public static IEnumerable<Voyage> GetVoyages()
         {
             using (var contexte = new Contexte())
             {
@@ -24,7 +24,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour afficher des instances de la table voyage
         /// </summary>
-        public Voyage GetVoyage(int idVoyage)
+        public static Voyage GetVoyage(int idVoyage)
         {
             using (var contexte = new Contexte())
             {
@@ -38,7 +38,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour créer une nouvelle instance de voyage sur la base.
 		/// </summary>
-		public void CreerVoyage(Voyage v)
+		public static void CreerVoyage(Voyage v)
         {
             using (var contexte = new Contexte())
             {
@@ -49,7 +49,7 @@ namespace Data.Service
         /// <summary>
 		/// méthode pour effacer une instance de voyage sur la base pour son id.
 		/// </summary>
-		public void EffacerVoyage(int idVoyage)
+		public static void EffacerVoyage(int idVoyage)
         {
             using (var contexte = new Contexte())
             {
@@ -63,7 +63,7 @@ namespace Data.Service
         /// <summary>
 		/// méthode pour effacer une instance de voyage sur la base pour son OBJ.
 		/// </summary>
-		public void EffacerVoyage(Voyage voyage)
+		public static void EffacerVoyage(Voyage voyage)
         {
             using (var contexte = new Contexte())
             {
@@ -74,7 +74,7 @@ namespace Data.Service
         /// <summary>
 		/// méthode pour modifier une instance de voyage sur la base pour son OBJ.
 		/// </summary>
-		public void ModifierVoyage(Voyage voyage)
+		public static void ModifierVoyage(Voyage voyage)
         {
             using (var contexte = new Contexte())
             {
@@ -87,7 +87,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour voir si une voyage est dans la base. Cherche pour son id.
         /// </summary>
-        public bool ChercherVoyage(int idVoyage)
+        public static bool ChercherVoyage(int idVoyage)
         {
             bool trouver = false;
             using (var contexte = new Contexte())
@@ -104,7 +104,7 @@ namespace Data.Service
         /// </summary>
         /// <param name="continent"> cotinent de recherche</param>
         /// <returns>liste des voyages</returns>
-        public IEnumerable<Voyage> ChercherVoyageParDestination_Continent(string continent)
+        public static IEnumerable<Voyage> ChercherVoyageParDestination_Continent(string continent)
         {
             
             using (var contexte = new Contexte())
@@ -121,7 +121,7 @@ namespace Data.Service
         /// </summary>
         /// <param name="pays">pays de recherche</param>
         /// <returns>liste des voyages</returns>
-        public IEnumerable<Voyage> ChercherVoyageParDestination_Pays(string pays)
+        public static IEnumerable<Voyage> ChercherVoyageParDestination_Pays(string pays)
         {
 
             using (var contexte = new Contexte())
@@ -138,7 +138,7 @@ namespace Data.Service
         /// </summary>
         /// <param name="region">region de recherche</param>
         /// <returns>liste des voyages</returns>
-        public IEnumerable<Voyage> ChercherVoyageParDestination_Region(string region)
+        public static IEnumerable<Voyage> ChercherVoyageParDestination_Region(string region)
         {
             using (var contexte = new Contexte())
             {
@@ -154,7 +154,7 @@ namespace Data.Service
         /// <param name="aller">date de aller</param>
         /// <param name="retour">date de aller</param>
         /// <returns>liste des voyages</returns>
-        public IEnumerable<Voyage> ChercherVoyageParDate(DateTime aller,DateTime retour)
+        public static IEnumerable<Voyage> ChercherVoyageParDate(DateTime aller,DateTime retour)
         {
             using (var contexte = new Contexte())
             {

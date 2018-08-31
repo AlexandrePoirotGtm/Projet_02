@@ -47,29 +47,26 @@ namespace Projet_02
         private static IEnumerable<Destination> listeDestinations = new List<Destination>();
 
         public static int AfficherListeDestinations()
-        {
-            ServiceDestination serviceDestination = new ServiceDestination();
-            listeDestinations = serviceDestination.GetDestinations();
+        {           
+            listeDestinations = ServiceDestination.GetDestinations();
             ConsoleHelper.AfficherListe(listeDestinations, strategieAffichageDestiniations);
             int id;
             do
             {
                 id = OutilsConsole.PosezNombre("Tapez l'ID");
-            } while (!serviceDestination.ChercherDestination(id));
+            } while (!ServiceDestination.ChercherDestination(id));
             return id;
         }
 
         public static int AfficherListeAgences()
         {
-            ServiceAgenceVoyage serviceAgenceVoyage = new ServiceAgenceVoyage();
-            listeAgences = serviceAgenceVoyage.GetAgences();
+            listeAgences = ServiceAgenceVoyage.GetAgences();
             ConsoleHelper.AfficherListe(listeAgences,strategieAffichageAgences);
-            ServiceAgenceVoyage serviceAgence = new ServiceAgenceVoyage();
             int id;
             do
             {
                 id = OutilsConsole.PosezNombre("Tapez l'ID");
-            } while (!serviceAgence.ChercherAgence(id));
+            } while (!ServiceAgenceVoyage.ChercherAgence(id));
             return id;
         }
         public static int AfficherListeClients()

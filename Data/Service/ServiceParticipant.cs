@@ -7,12 +7,12 @@ using Data.DAL;
 using System.Data.Entity;
 namespace Data.Service
 {
-    public class ServiceParticipant
+    public static class ServiceParticipant
     {
         /// <summary>
         /// méthode pour afficher des instances de la table pqrticipant
         /// </summary>
-        public IEnumerable<Participant> GetParticipants()
+        public static IEnumerable<Participant> GetParticipants()
         {
             using (var contexte = new Contexte())
             {
@@ -24,7 +24,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour afficher des instances de la table pqrticipant
         /// </summary>
-        public Participant GetParticipant(int IdParticipant)
+        public static Participant GetParticipant(int IdParticipant)
         {
             using (var contexte = new Contexte())
             {
@@ -37,7 +37,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour créer une nouvelle instance du participant sur la base.
 		/// </summary>
-		public void CreerParticipant(Participant p)
+		public static void CreerParticipant(Participant p)
         {
             using (var contexte = new Contexte())
             {
@@ -48,7 +48,7 @@ namespace Data.Service
         /// <summary>
 		/// méthode pour effacer une instance du participant sur la base pour son id.
 		/// </summary>
-		public void EffacerParticipant(int idParticipant)
+		public static void EffacerParticipant(int idParticipant)
         {
             using (var contexte = new Contexte())
             {
@@ -62,7 +62,7 @@ namespace Data.Service
         /// <summary>
 		/// méthode pour voir si un Participant est dans la base. Cherche pour son id.
 		/// </summary>
-		public bool ChercherParticipant(int idParticipant)
+		public static bool ChercherParticipant(int idParticipant)
         {
             bool trouver = false;
             using (var contexte = new Contexte())

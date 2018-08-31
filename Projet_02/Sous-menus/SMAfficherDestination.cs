@@ -50,24 +50,21 @@ namespace Projet_02.Sous_menus
         private void AfficherDossierRegion()
         {
             ConsoleHelper.AfficherEntete("Afficher");
-            ServiceDestination serviceDestination = new ServiceDestination();
-            liste = serviceDestination.FiltrerDestinationRegion(OutilsConsole.PosezQuestion("Region: "));
+            liste = ServiceDestination.FiltrerDestinationRegion(OutilsConsole.PosezQuestion("Region: "));
             ConsoleHelper.AfficherListe(this.liste, strategieAffichageClients);
         }
 
         private void AfficherDossierPays()
         {
             ConsoleHelper.AfficherEntete("Afficher");
-            ServiceDestination serviceDestination = new ServiceDestination();
-            liste = serviceDestination.FiltrerDestinationPays(OutilsConsole.PosezQuestion("Pays: "));
+            liste = ServiceDestination.FiltrerDestinationPays(OutilsConsole.PosezQuestion("Pays: "));
             ConsoleHelper.AfficherListe(this.liste, strategieAffichageClients);
         }
 
         private void AfficherDossierContinent()
         {
             ConsoleHelper.AfficherEntete("Afficher");
-            ServiceDestination serviceDestination = new ServiceDestination();
-            liste = serviceDestination.FiltrerDestinationContinent(OutilsConsole.PosezQuestion("Continent: "));
+            liste = ServiceDestination.FiltrerDestinationContinent(OutilsConsole.PosezQuestion("Continent: "));
             ConsoleHelper.AfficherListe(this.liste, strategieAffichageClients);
         }
     }

@@ -49,8 +49,7 @@ namespace Projet_02
             Console.WriteLine("Quel Destination : ");
             voyage.IdDestination = Affichage.AfficherListeDestinations();
 
-            ServiceVoyage serviceVoyage = new ServiceVoyage();
-            serviceVoyage.CreerVoyage(voyage);
+            ServiceVoyage.CreerVoyage(voyage);
         }
 
         private void AfficherVoyages()
