@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BoVoyage.Framework.UI;
+using Metier;
+using Data;
 
 namespace Projet_02
 {
@@ -32,8 +34,9 @@ namespace Projet_02
         private void CréerAssurances()
         {
             ConsoleHelper.AfficherEntete("Créer une Assurance");
-            OutilsConsole.PosezPrix("Montant : ");
-            OutilsConsole.PosezQuestionObligatoire("Type D'assurance : ");
+            decimal montant = OutilsConsole.PosezPrix("Montant : ");
+            TypeAssurance typeAssurance = OutilsConsole.PosezTypeAssurance("Type D'assurance : ");
+            Services.CreerAssurance(montant, typeAssurance);
         }
 
         private void AfficherAssurance()
