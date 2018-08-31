@@ -8,7 +8,27 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Data
 {
     public class DossierReservation
-    {       
+    {
+        public DossierReservation()
+        {
+        }
+        public DossierReservation(string ncb, decimal prix, Voyage v, Client c)
+        {
+            NumeroCarteBancaire = ncb;
+            PrixParPersonne = prix;
+            Voyage = v;
+            Client = c;
+        }
+        public DossierReservation(string ncb, decimal prix,Voyage v,Client c, List<Participant> p_s)
+        {
+            NumeroCarteBancaire = ncb;
+            PrixParPersonne = prix;
+            Voyage = v;
+            Client  = c;
+            Participants = p_s;
+        }
+        
+
         public int Id { get; set; }        
         public string NumeroCarteBancaire { get; set; }
         public decimal PrixParPersonne { get; set; }
@@ -20,7 +40,7 @@ namespace Data
         public Client Client { get; set; }
 
         [NotMapped]
-        public Participant[] Participants { get; set; }
+        public List<Participant> Participants { get; set; }
        
 
         public List<Assurance> Assurances { get; set; }
