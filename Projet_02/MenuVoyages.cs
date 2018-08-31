@@ -48,7 +48,13 @@ namespace Projet_02
 
         private void CreerVoyage()
         {
-            Console.WriteLine("Rajout d'un voyage");
+            Console.WriteLine("Création d'un voyage");
+            OutilsConsole.PosezQuestionObligatoire("Ce voyage appartient à quelle Agence : ");
+            OutilsConsole.PosezQuestionObligatoire("Quel Destination : ");
+            OutilsConsole.PosezDate("Date d'aller : ");
+            OutilsConsole.PosezDate("Date de retour  : ");
+            OutilsConsole.PosezQuestionObligatoire("Nombres de place disponible  : ");
+            OutilsConsole.PosezQuestionObligatoire("Prix Par personne  : ");
         }
 
         private void AfficherVoyages()

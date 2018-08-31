@@ -31,7 +31,9 @@ namespace Projet_02
 
         private void CréerAssurances()
         {
-            ConsoleHelper.AfficherEntete("Afficher");
+            ConsoleHelper.AfficherEntete("Créer une Assurance");
+            OutilsConsole.PosezQuestionObligatoire("Montant : ");
+            OutilsConsole.PosezQuestionObligatoire("Type D'assurance : ");
         }
 
         private void AfficherAssurance()

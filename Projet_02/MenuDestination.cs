@@ -36,7 +36,11 @@ namespace Projet_02
 
         private void CreerDestination()
         {
-            ConsoleHelper.AfficherEntete("Afficher");
+            ConsoleHelper.AfficherEntete("Créer une Destination");
+            OutilsConsole.PosezQuestionObligatoire("Continent : ");
+            OutilsConsole.PosezQuestionObligatoire("Pays : ");
+            OutilsConsole.PosezQuestionObligatoire("Region : ");
+            OutilsConsole.PosezQuestionObligatoire("Description : ");
         }
 
         private void ChercherDestination()

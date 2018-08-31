@@ -33,7 +33,10 @@ namespace Projet_02
 
         private void CréerDossier()
         {
-            ConsoleHelper.AfficherEntete("Afficher");
+            ConsoleHelper.AfficherEntete("Création D'un Dossier");
+            OutilsConsole.PosezQuestionObligatoire("Nombre de Voyageurs : ");
+            //Appelent Création Voyageurs qui va demander les reductions et calculer le prix
+            OutilsConsole.PosezQuestionObligatoire("Numéro de Carte Bancaire : ");
         }
 
         private void AfficherDossier()
