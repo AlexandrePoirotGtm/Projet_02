@@ -49,8 +49,7 @@ namespace Projet_02
         private void AfficherAgences()
         {
             ConsoleHelper.AfficherEntete("Afficher");
-            ServiceAgenceVoyage serviceAgenceVoyage = new ServiceAgenceVoyage();
-            liste = serviceAgenceVoyage.GetAgences();
+            liste = ServiceAgenceVoyage.GetAgences();
             ConsoleHelper.AfficherListe(this.liste, strategieAffichageClients);
         }
     }

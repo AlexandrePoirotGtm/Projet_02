@@ -8,12 +8,12 @@ using System.Data.Entity;
 
 namespace Data.Service
 {
-    public class ServiceAssurance
+    public static class ServiceAssurance
     {
         /// <summary>
         /// méthode pour afficher des instances de la table Assurance
         /// </summary>
-        public IEnumerable<Assurance> GetAssurance()
+        public static IEnumerable<Assurance> GetAssurance()
         {
             using (var contexte = new Contexte())
             {
@@ -25,7 +25,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour afficher une instance de la table Assurance
         /// </summary>
-        public Assurance GetAssurance(int idAssurance)
+        public static Assurance GetAssurance(int idAssurance)
         {
             using (var contexte = new Contexte())
             {
@@ -38,7 +38,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour créer une nouvelle instance de Assurance sur la base.
 		/// </summary>
-		public void CreerAssurance(Assurance assu)
+		public static void CreerAssurance(Assurance assu)
         {
             using (var contexte = new Contexte())
             {
@@ -49,7 +49,7 @@ namespace Data.Service
         /// <summary>
 		/// méthode pour effacer une instance de Assurance sur la base pour son id.
 		/// </summary>
-		public void EffacerAssurance(int idAssurance)
+		public static void EffacerAssurance(int idAssurance)
         {
             using (var contexte = new Contexte())
             {
@@ -66,7 +66,7 @@ namespace Data.Service
         /// </summary>
         /// <param name="assurance">modification de l'assurance par OBJ</param>
         /// <returns></returns>
-        public void ModifierAssurance(Assurance assurance)
+        public static void ModifierAssurance(Assurance assurance)
         {
             using (var contexte = new Contexte())
             {

@@ -7,26 +7,13 @@ using BoVoyage.Framework.UI;
 using Metier;
 using Data;
 using Projet_02.Sous_menus;
+using Data.Service;
 
 
 namespace Projet_02
 {
     public class MenuVoyages : ModuleBase<Application>
     {
-        // On définit ici les propriétés qu'on veut afficher
-        //  et la manière de les afficher
-         /*   private static readonly List<InformationAffichage> strategieAffichageClients =
-                 new List<InformationAffichage>
-                 {
-                     InformationAffichage.Creer<Client>(x=>x.Id, "Id", 3),
-                     InformationAffichage.Creer<Client>(x=>x.Nom, "Nom", 10),
-                     InformationAffichage.Creer<Client>(x=>x.Prenom, "Prenom", 10),
-                     InformationAffichage.Creer<Client>(x=>x.Email, "Email", 15),
-                     InformationAffichage.Creer<Client>(x=>x.DateInscription, "Date", 10),
-                 };
-
-             private readonly List<Client> liste = new List<Client>();
-             */
         public MenuVoyages(Application application, string nomModule)
             : base(application, nomModule)
         {
@@ -48,14 +35,21 @@ namespace Projet_02
 
         private void CreerVoyage()
         {
-            Console.WriteLine("Création d'un voyage");
-            OutilsConsole.PosezQuestionObligatoire("Ce voyage appartient à quelle Agence : ");
+            ConsoleHelper.AfficherEntete("Création d'un voyage");
+            Voyage voyage = new Voyage
+            {
+                DateAller = OutilsConsole.PosezDate("Date d'aller : "),
+                DateRetour = OutilsConsole.PosezDate("Date de retour  : "),
+                PlacesDisponibles = OutilsConsole.PosezNombre("Nombres de place disponible  : "),
+                PrixParPersonne = OutilsConsole.PosezPrix("Prix Par personne  : "),
+            };
             
-            OutilsConsole.PosezQuestionObligatoire("Quel Destination : ");
-            OutilsConsole.PosezDate("Date d'aller : ");
-            OutilsConsole.PosezDate("Date de retour  : ");
-            OutilsConsole.PosezNombre("Nombres de place disponible  : ");
-            OutilsConsole.PosezPrix("Prix Par personne  : ");
+            Console.WriteLine("Ce voyage appartient à quelle Agence : ");
+            voyage.IdAgenceVoyage = Affichage.AfficherListeAgences();
+            Console.WriteLine("Quel Destination : ");
+            voyage.IdDestination = Affichage.AfficherListeDestinations();
+
+            ServiceVoyage.CreerVoyage(voyage);
         }
 
         private void AfficherVoyages()

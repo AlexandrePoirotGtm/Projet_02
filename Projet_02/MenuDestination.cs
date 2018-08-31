@@ -68,8 +68,7 @@ namespace Projet_02
 
         private void AfficherDestinations()
         {
-            ServiceDestination serviceDestination = new ServiceDestination();
-            liste = serviceDestination.GetDestinations();
+            liste = ServiceDestination.GetDestinations();
             ConsoleHelper.AfficherListe(this.liste, strategieAffichageClients);
         }
     }

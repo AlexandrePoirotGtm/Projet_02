@@ -7,12 +7,12 @@ using Data.DAL;
 using System.Data.Entity;
 namespace Data.Service
 {
-    public class ServiceDossierReservation
+    public static class ServiceDossierReservation
     {
         /// <summary>
         /// méthode pour afficher des instances de la table DossierReservation
         /// </summary>
-        public IEnumerable<DossierReservation> GetDossierReservations()
+        public static IEnumerable<DossierReservation> GetDossierReservations()
         {
             using (var contexte = new Contexte())
             {
@@ -24,7 +24,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour afficher des instances de la table DossierReservation
         /// </summary>
-        public DossierReservation GetDossierReservation(int IdDossier)
+        public static DossierReservation GetDossierReservation(int IdDossier)
         {
             using (var contexte = new Contexte())
             {
@@ -37,7 +37,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour créer une nouvelle instance du DossierReservation sur la base.
 		/// </summary>
-		public void CreerDossierReservation(DossierReservation dossier)
+		public static void CreerDossierReservation(DossierReservation dossier)
         {
             using (var contexte = new Contexte())
             {
@@ -49,7 +49,7 @@ namespace Data.Service
 		/// méthode pour effacer une instance du DossierReservation sur la base pour son id.
 		/// </summary>
         /// <param name="idDossier">identifiant du Dossier</param>
-		public void EffacerDossierReservation(int idDossier)
+		public static void EffacerDossierReservation(int idDossier)
         {
             using (var contexte = new Contexte())
             {
@@ -65,7 +65,7 @@ namespace Data.Service
         /// méthode pour Modifier une instance du DossierReservation sur la base pour son OBJ.
         /// </summary>
         /// <param name="dossier">obj dossier</param>
-        public void ModifierDossierReservation(DossierReservation dossier)
+        public static void ModifierDossierReservation(DossierReservation dossier)
         {
             using (var contexte = new Contexte())
             {

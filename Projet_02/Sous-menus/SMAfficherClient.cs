@@ -28,8 +28,7 @@ namespace Projet_02.Sous_menus
         public SMAfficherClient(Application application, string nomModule)
             : base(application, nomModule)
         {
-            ServiceClient serviceClient = new ServiceClient();
-            liste = serviceClient.GetClients();
+            liste = ServiceClient.GetClients();
         }
 
         protected override void InitialiserMenu(Menu menu)

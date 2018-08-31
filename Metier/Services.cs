@@ -23,8 +23,7 @@ namespace Metier
                 Email = email
             };
 
-            ServiceClient serviceClient = new ServiceClient();
-            serviceClient.CreerClient(cli);
+            ServiceClient.CreerClient(cli);
         }
 
         public static void CreerAssurance(decimal montant,TypeAssurance typeAssurance)
@@ -35,8 +34,7 @@ namespace Metier
                 TypeAssurance = typeAssurance
             };
 
-            ServiceAssurance serviceAssurance = new ServiceAssurance();
-            serviceAssurance.CreerAssurance(assurance);
+            ServiceAssurance.CreerAssurance(assurance);
         }
 
         public static void CreerDestination(string continent,string pays, string region, string description)
@@ -49,8 +47,7 @@ namespace Metier
                 Description = description
             };
 
-            ServiceDestination serviceDestination = new ServiceDestination();
-            serviceDestination.CreerDestination(destination);
+            ServiceDestination.CreerDestination(destination);
         }
 
         public static void CreerAgences(string nom)
@@ -59,8 +56,7 @@ namespace Metier
             {
                 Nom = nom
             };
-            ServiceAgenceVoyage serviceAgenceVoyage = new ServiceAgenceVoyage();
-            serviceAgenceVoyage.CreerAgence(agenceVoyage);
+            ServiceAgenceVoyage.CreerAgence(agenceVoyage);
         }
     
         public static void CreerVoyages()

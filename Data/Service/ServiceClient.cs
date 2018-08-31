@@ -8,12 +8,12 @@ using System.Data.Entity;
 
 namespace Data.Service
 {
-    public class ServiceClient
+    public static class ServiceClient
     {
         /// <summary>
             /// méthode pour afficher des instances de la table client
             /// </summary>
-        public IEnumerable<Client> GetClients()
+        public static IEnumerable<Client> GetClients()
         {
             using (var contexte = new Contexte())
             {
@@ -25,7 +25,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour afficher des instances de la table client
         /// </summary>
-        public Client GetClient(int IdClient)
+        public static Client GetClient(int IdClient)
         {
             using (var contexte = new Contexte())
             {
@@ -38,7 +38,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour créer une nouvelle instance du client sur la base.
 		/// </summary>
-		public void CreerClient(Client c)
+		public static void CreerClient(Client c)
         {
             using (var contexte = new Contexte())
             {                
@@ -50,7 +50,7 @@ namespace Data.Service
 		/// méthode pour effacer une instance du client sur la base pour son id.
 		/// </summary>
         /// <param name="idClient">identifiant du client</param>
-		public void EffacerClient(int idClient)
+		public static void EffacerClient(int idClient)
         {
             using (var contexte = new Contexte())
             {
@@ -66,7 +66,7 @@ namespace Data.Service
 		/// méthode pour effacer une instance du client sur la base pour son OBJ.
 		/// </summary>
         /// <param name="client">obj client</param>
-		public void EffacerClient(Client client)
+		public static void EffacerClient(Client client)
         {
             using (var contexte = new Contexte())
             {
@@ -79,7 +79,7 @@ namespace Data.Service
         /// méthode pour Modifier une instance du client sur la base pour son OBJ.
         /// </summary>
         /// <param name="client">obj client</param>
-        public void ModifierClient(Client client)
+        public static void ModifierClient(Client client)
         {
             using (var contexte = new Contexte())
             {
@@ -92,7 +92,7 @@ namespace Data.Service
         /// <summary>
 		/// méthode pour voir si un client est dans la base. Cherche pour son id.
 		/// </summary>
-		public bool ChercherClient(int idClient)
+		public static bool ChercherClient(int idClient)
         {
             bool trouver = false;
             using (var contexte = new Contexte())
@@ -107,7 +107,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour afficher des client. Cherche pour son Nom.
         /// </summary>
-        public IEnumerable<Client> FiltrerClientParNom(string nomClient)
+        public static IEnumerable<Client> FiltrerClientParNom(string nomClient)
         {
             using (var contexte = new Contexte())
             {
@@ -120,7 +120,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour afficher des client. Cherche pour son Prenom.
         /// </summary>
-        public IEnumerable<Client> FiltrerClientParPrenom(string prenomClient)
+        public static IEnumerable<Client> FiltrerClientParPrenom(string prenomClient)
         {
             using (var contexte = new Contexte())
             {

@@ -122,6 +122,8 @@ namespace Projet_02
             return resultat;
         }
 
+        
+
         public static float PosezReduction(string question)
         {
             string reponse;
