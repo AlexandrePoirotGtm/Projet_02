@@ -48,7 +48,7 @@ namespace Projet_02
         internal static List<Participant> CreerParticpants(int nombreParticipants)
         {
             List<Participant> Participants = new List<Participant>();
-            for (int i = 0; i <= nombreParticipants; i++)
+            for (int i = 0; i < nombreParticipants; i++)
             {
                 ConsoleHelper.AfficherEntete("Creer un Participant");
                 string nom = OutilsConsole.PosezQuestionObligatoire("Nom : ");
@@ -60,7 +60,7 @@ namespace Projet_02
                 string email = OutilsConsole.PosezQuestion("Email :");
                 int age = OutilsConsole.CalculerAge(dateNaissance);
                 
-                Services.CreerParticpant(nom, prenom, civilite, adresse, telephone, dateNaissance, age, OutilsConsole.CalculerPromo(age));
+                Participants.Add(Services.CreerParticpant(nom, prenom, civilite, adresse, telephone, dateNaissance, age, OutilsConsole.CalculerPromo(age)));
             }
             return Participants;
         }

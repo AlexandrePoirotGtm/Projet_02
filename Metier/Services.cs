@@ -10,7 +10,7 @@ namespace Metier
     public static class Services
     {
         //Methodes De cration
-        public static void CreerParticpant(string nom, string prenom, string civilite, string adresse, string telephone, DateTime dateNaissance, int age,float reduction)
+        public static Participant CreerParticpant(string nom, string prenom, string civilite, string adresse, string telephone, DateTime dateNaissance, int age,float reduction)
         {
             Participant participant = new Participant
             {
@@ -23,7 +23,7 @@ namespace Metier
                 Age = age,
                 Reduction = reduction,
             };
-            ServiceParticipant.CreerParticipant(participant);
+            return participant;
         }
 
         public static void CreerClient(string nom, string prenom, string civilite, string adresse, string telephone, DateTime dateNaissance, string email)
@@ -102,7 +102,7 @@ namespace Metier
             int idDos = dossier.Id;
             foreach (Participant  par in participants)
             {
-                ServiceParticipant.CreerParticipant(par);
+                ServiceParticipant.CreerParticipant(par,idDos);
             }
             
         }
