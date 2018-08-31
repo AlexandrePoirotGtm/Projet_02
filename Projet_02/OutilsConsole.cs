@@ -22,27 +22,6 @@ namespace Projet_02
             Console.WriteLine(question);
             string re = Console.ReadLine();
             TypeAssurance typeAssurance;
-           /* if (Enum.TryParse(re, true, out typeAssurance))
-            {
-                if (Enum.IsDefined(typeof(TypeAssurance), typeAssurance))
-                {
-
-                    re = Console.ReadLine();
-                }
-            }
-            else
-            {
-                do
-                {
-                    Console.WriteLine("erreur réessayer : ");
-                    re = Console.ReadLine();
-                } while (!(Enum.IsDefined(typeof(TypeAssurance), typeAssurance)));
-            }
-            //return typeAssurance;
-            
-            string reponse;
-            Console.WriteLine(question);
-            reponse = Console.ReadLine();*/
             while (!(Enum.TryParse(re, true, out typeAssurance)) | (!(Enum.IsDefined(typeof(TypeAssurance), typeAssurance))))
             {
                 ConsoleHelper.AfficherMessageErreur("Reponse Obligatoire\nVeuillez Recommancer : ");
@@ -50,6 +29,34 @@ namespace Projet_02
                 re = Console.ReadLine();
             };
             return typeAssurance;
+        }
+
+        public static Etat PosezEtat(string question)
+        {
+            Console.WriteLine(question);
+            string re = Console.ReadLine();
+            Etat etat;
+            while (!(Enum.TryParse(re, true, out etat)) | (!(Enum.IsDefined(typeof(Etat), etat))))
+            {
+                ConsoleHelper.AfficherMessageErreur("Reponse Obligatoire\nVeuillez Recommancer : ");
+                Console.WriteLine(question);
+                re = Console.ReadLine();
+            };
+            return etat;
+        }
+
+        public static RaisonAnnulationDossier PosezRaisonAnnulation(string question)
+        {
+            Console.WriteLine(question);
+            string re = Console.ReadLine();
+            RaisonAnnulationDossier raisonAnnulationDossier;
+            while (!(Enum.TryParse(re, true, out raisonAnnulationDossier)) | (!(Enum.IsDefined(typeof(RaisonAnnulationDossier), raisonAnnulationDossier))))
+            {
+                ConsoleHelper.AfficherMessageErreur("Reponse Obligatoire\nVeuillez Recommancer : ");
+                Console.WriteLine(question);
+                re = Console.ReadLine();
+            };
+            return raisonAnnulationDossier;
         }
 
         public static string PosezQuestionObligatoire(string question)
