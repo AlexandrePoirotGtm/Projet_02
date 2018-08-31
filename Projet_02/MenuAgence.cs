@@ -35,7 +35,8 @@ namespace Projet_02
 
         private void CreerAgence()
         {
-            ConsoleHelper.AfficherEntete("Afficher");
+            ConsoleHelper.AfficherEntete("Creer Une Agence");
+            OutilsConsole.PosezQuestionObligatoire("Nom : ");
         }
 
         private void ChercherAgences()

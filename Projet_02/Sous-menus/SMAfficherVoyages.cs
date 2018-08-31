@@ -25,8 +25,8 @@ namespace Projet_02.Sous_menus
             {
                 FonctionAExecuter = this.AfficherParDestinations
             });
-            menu.AjouterElement(new ElementMenuQuitterMenu("R", "Revenir au menu principal..."));
-            menu.AjouterElement(new ElementMenuQuitterMenu("", ""));
+            menu.AjouterElement(new ElementMenuQuitterMenu("R", "Revenir au menu precedent..."));
+
         }
 
         private void AfficherParAgences()
