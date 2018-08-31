@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Data
 {
     public class Client : Personne
@@ -21,6 +22,8 @@ namespace Data
             DateNaissance = dateNaissance;
         }
         public string Email { get; set; }
+
+        [NotMapped]
         public List<DossierReservation> Dossiers { get; set; }
         //SA MARCHE - CRIS
         public override string ToString()

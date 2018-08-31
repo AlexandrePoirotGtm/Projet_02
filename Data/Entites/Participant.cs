@@ -10,6 +10,7 @@ namespace Data
     {
         
         public float Reduction { get; set; }
+
         //SA MARCHE - CRIS
         public override string ToString()
         {
