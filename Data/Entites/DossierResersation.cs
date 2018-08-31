@@ -28,23 +28,36 @@ namespace Data
             Voyage = v;
             Client  = c;
             Participants = p_s;
+            EtatDossierReservation = Etat.EnAttente;
         }
         
+        [Column("Id")]
+        public int Id { get; set; }
 
-        public int Id { get; set; }        
+        [Column("NumeroCarteBancaire")]
         public string NumeroCarteBancaire { get; set; }
+
+        [Column("PrixParPersonne")]
         public decimal PrixParPersonne { get; set; }
+
+        [Column("EtatDossierReservation")]
         public Etat EtatDossierReservation { get; set; }
+
+        [NotMapped]
+        public RaisonAnnulationDossier RaisonAnnulationDossier { get; set; }
+
         [NotMapped]
         public decimal PrixTotal { get; set; }
         /*     
         public Voyage Voyage { get; set; }
         public Client Client { get; set; }
         */
+        [Column("IdVoyage")]
         public int IdVoyage { get; set; }
         [ForeignKey("IdVoyage")]
         public virtual Voyage Voyage { get; set; }
 
+        [Column("IdClient")]
         public int IdClient { get; set; }
         [ForeignKey("IdClient")]
         public virtual Client Client { get; set; }
@@ -58,17 +71,19 @@ namespace Data
 
         void Annuler(RaisonAnnulationDossier raison)
         {
-            
+            RaisonAnnulationDossier = raison;
+            EtatDossierReservation = Etat.Refusee;
+
         }
 
         void ValiderSolvabiliter()
         {
-
+            EtatDossierReservation = Etat.EnCours;
         }
 
         void Accepter()
         {
-
+            EtatDossierReservation = Etat.Acceptee;
         }
     }
 }

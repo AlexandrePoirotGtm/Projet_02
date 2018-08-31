@@ -74,6 +74,6 @@ namespace Data.Service
                 contexte.SaveChanges();
             }
         }
-        /*MANQUE PLUSIERS FUNCTIONALITE: CHANGEMENT D'ETAT et etc*/
+        
     }
 }
