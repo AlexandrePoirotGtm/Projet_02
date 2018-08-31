@@ -18,6 +18,7 @@ namespace Data
             PrixParPersonne = prix;
             Voyage = v;
             Client = c;
+            EtatDossierReservation = Etat.EnAttente;
         }
         public DossierReservation(string ncb, decimal prix,Voyage v,Client c, List<Participant> p_s)
         {
@@ -56,7 +57,7 @@ namespace Data
 
         void Annuler(RaisonAnnulationDossier raison)
         {
-
+            
         }
 
         void ValiderSolvabiliter()
