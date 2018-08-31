@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using BoVoyage.Framework.UI;
 using Metier;
 using Projet_02.Sous_menus;
-
+using Data.Service;
+using Data;
 
 namespace Projet_02
 {
@@ -64,14 +65,18 @@ namespace Projet_02
 
         private void CreerClient()
         {
+            
             ConsoleHelper.AfficherEntete("Creer un client");
-            OutilsConsole.PosezQuestionObligatoire("Nom : ");
-            OutilsConsole.PosezQuestionObligatoire("Prenom : ");
-            OutilsConsole.PosezQuestionObligatoire("Civilité : ");
-            OutilsConsole.PosezQuestionObligatoire("Adresse : ");
-            OutilsConsole.PosezQuestionObligatoire("Telephone : ");
-            OutilsConsole.PosezQuestionObligatoire("Date de Naissance : ");
-            OutilsConsole.PosezQuestion("Email :");
+            string nom = OutilsConsole.PosezQuestionObligatoire("Nom : ");
+            string prenom = OutilsConsole.PosezQuestionObligatoire("Prenom : ");
+            string civilite = OutilsConsole.PosezQuestionObligatoire("Civilité : ");
+            string adresse = OutilsConsole.PosezQuestionObligatoire("Adresse : ");
+            string telephone = OutilsConsole.PosezQuestionObligatoire("Telephone : ");
+            DateTime dateNaissance = OutilsConsole.PosezDate("Date de Naissance : ");
+            string email = OutilsConsole.PosezQuestion("Email :");
+
+            Services.CreerClient(nom,prenom,civilite,adresse,telephone,dateNaissance,email);
+            
 
         }
     }

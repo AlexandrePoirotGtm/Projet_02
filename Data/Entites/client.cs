@@ -22,7 +22,6 @@ namespace Data
             DateNaissance = dateNaissance;
         }
         public string Email { get; set; }
-
         [NotMapped]
         public List<DossierReservation> Dossiers { get; set; }
         //SA MARCHE - CRIS

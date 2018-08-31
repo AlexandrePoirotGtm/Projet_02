@@ -38,7 +38,7 @@ namespace Projet_02
             reponse = Console.ReadLine();
             while (!DateTime.TryParse(reponse ,out resultat))
             {
-                ConsoleHelper.AfficherMessageErreur("Reponse Obligatoire\nVeuillez Recommancer : ");
+                ConsoleHelper.AfficherMessageErreur("Format incorrect\nVeuillez Recommancer : ");
                 Console.WriteLine(question);
                 reponse = Console.ReadLine();
             };
@@ -53,7 +53,7 @@ namespace Projet_02
             reponse = Console.ReadLine();
             while (!decimal.TryParse(reponse, out resultat))
             {
-                ConsoleHelper.AfficherMessageErreur("Reponse Obligatoire\nVeuillez Recommancer : ");
+                ConsoleHelper.AfficherMessageErreur("Format incorrect\nVeuillez Recommancer : ");
                 Console.WriteLine(question);
                 reponse = Console.ReadLine();
             };
@@ -68,7 +68,7 @@ namespace Projet_02
             reponse = Console.ReadLine();
             while (!int.TryParse(reponse, out resultat))
             {
-                ConsoleHelper.AfficherMessageErreur("Reponse Obligatoire\nVeuillez Recommancer : ");
+                ConsoleHelper.AfficherMessageErreur("Format incorrect\nVeuillez Recommancer : ");
                 Console.WriteLine(question);
                 reponse = Console.ReadLine();
             };
@@ -83,7 +83,7 @@ namespace Projet_02
             reponse = Console.ReadLine();
             while (!float.TryParse(reponse, out resultat))
             {
-                ConsoleHelper.AfficherMessageErreur("Reponse Obligatoire\nVeuillez Recommancer : ");
+                ConsoleHelper.AfficherMessageErreur("Format incorrect\nVeuillez Recommancer : ");
                 Console.WriteLine(question);
                 reponse = Console.ReadLine();
             };
