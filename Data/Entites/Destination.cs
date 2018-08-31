@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Data
 {
+    [Table("Destinations")]
     public class Destination
     {
         public int Id { get; set; }
