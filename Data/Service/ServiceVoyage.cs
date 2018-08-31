@@ -80,7 +80,7 @@ namespace Data.Service
         /// </summary>
         /// <param name="continent"> cotinent de recherche</param>
         /// <returns>liste des voyages</returns>
-        public IEnumerable<Voyage> ChercherVoyageParDestination_Cotinent(string continent)
+        public IEnumerable<Voyage> ChercherVoyageParDestination_Continent(string continent)
         {
             
             using (var contexte = new Contexte())
