@@ -61,6 +61,30 @@ namespace Data.Service
             }
         }
         /// <summary>
+		/// méthode pour effacer une instance de voyage sur la base pour son OBJ.
+		/// </summary>
+		public void EffacerVoyage(Voyage voyage)
+        {
+            using (var contexte = new Contexte())
+            {
+                contexte.Entry(voyage).State = EntityState.Deleted;
+                contexte.SaveChanges();
+            }
+        }
+        /// <summary>
+		/// méthode pour modifier une instance de voyage sur la base pour son OBJ.
+		/// </summary>
+		public void ModifierVoyage(Voyage voyage)
+        {
+            using (var contexte = new Contexte())
+            {
+                contexte.Voyages.Attach(voyage);
+                contexte.Entry(voyage).State = EntityState.Modified;
+                contexte.SaveChanges();
+            }
+        }
+
+        /// <summary>
         /// méthode pour voir si une voyage est dans la base. Cherche pour son id.
         /// </summary>
         public bool ChercherVoyage(int idVoyage)

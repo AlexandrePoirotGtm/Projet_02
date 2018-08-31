@@ -89,5 +89,17 @@ namespace Data.Service
                 return voyages;
             }
         }
+        /// <summary>
+        /// méthode pour Modifier une agence
+        /// </summary>
+        /// <param name="idAgence">identifiant de l'agence</param>
+        /// <returns></returns>
+        public void ModifierAgence(AgenceVoyage ag)
+        {
+            using (var contexte = new Contexte())
+            {
+               //TODO
+            }
+        }
     }
 }

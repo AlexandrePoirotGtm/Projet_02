@@ -61,6 +61,19 @@ namespace Data.Service
             }
         }
 
+        /// <summary>
+        /// méthode pour Modifier une instance du DossierReservation sur la base pour son OBJ.
+        /// </summary>
+        /// <param name="dossier">obj dossier</param>
+        public void ModifierDossierReservation(DossierReservation dossier)
+        {
+            using (var contexte = new Contexte())
+            {
+                contexte.DossierReservations.Attach(dossier);
+                contexte.Entry(dossier).State = EntityState.Modified;
+                contexte.SaveChanges();
+            }
+        }
         /*MANQUE PLUSIERS FUNCTIONALITE: CHANGEMENT D'ETAT et etc*/
     }
 }
