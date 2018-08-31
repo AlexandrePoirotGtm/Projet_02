@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,11 @@ namespace Data
     {
         
         public float Reduction { get; set; }
+        public int IdDossierReservation { get; set; }
 
-        //SA MARCHE - CRIS
+        [ForeignKey("IdDossierReservation")]
+        public virtual DossierReservation DossierReservation { get; set; }
+
         public override string ToString()
         {
             return $"({Id}) {Nom.ToUpper()},{Prenom.ToLower()} - Ad. {Adresse}";

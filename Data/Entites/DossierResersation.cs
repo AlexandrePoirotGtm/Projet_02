@@ -35,9 +35,17 @@ namespace Data
         public Etat EtatDossierReservation { get; set; }
         [NotMapped]
         public decimal PrixTotal { get; set; }
-             
+        /*     
         public Voyage Voyage { get; set; }
         public Client Client { get; set; }
+        */
+        public int IdVoyage { get; set; }
+        [ForeignKey("IdVoyage")]
+        public virtual Voyage Voyage { get; set; }
+
+        public int IdClient { get; set; }
+        [ForeignKey("IdClient")]
+        public virtual Client Client { get; set; }
 
         [NotMapped]
         public List<Participant> Participants { get; set; }
