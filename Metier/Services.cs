@@ -37,5 +37,19 @@ namespace Metier
             ServiceAssurance serviceAssurance = new ServiceAssurance();
             serviceAssurance.CreerAssurance(assurance);
         }
+
+        public static void CreerDestination(string continent,string pays, string region, string description)
+        {
+            Destination destination = new Destination
+            {
+                Continent = continent,
+                Pays = pays,
+                Region = region,
+                Description = description
+            };
+
+            ServiceDestination serviceDestination = new ServiceDestination();
+            serviceDestination.CreerDestination(destination);
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BoVoyage.Framework.UI;
 using Projet_02.Sous_menus;
+using Metier;
 
 namespace Projet_02
 {
@@ -37,10 +38,12 @@ namespace Projet_02
         private void CreerDestination()
         {
             ConsoleHelper.AfficherEntete("Créer une Destination");
-            OutilsConsole.PosezQuestionObligatoire("Continent : ");
-            OutilsConsole.PosezQuestionObligatoire("Pays : ");
-            OutilsConsole.PosezQuestionObligatoire("Region : ");
-            OutilsConsole.PosezQuestionObligatoire("Description : ");
+            string continent = OutilsConsole.PosezQuestionObligatoire("Continent : ");
+            string pays =  OutilsConsole.PosezQuestionObligatoire("Pays : ");
+            string region = OutilsConsole.PosezQuestionObligatoire("Region : ");
+            string description = OutilsConsole.PosezQuestionObligatoire("Description : ");
+
+            Services.CreerDestination(continent,pays,region,description);
         }
 
         private void ChercherDestination()

@@ -35,7 +35,7 @@ namespace Projet_02
         {
             ConsoleHelper.AfficherEntete("Créer une Assurance");
             decimal montant = OutilsConsole.PosezPrix("Montant : ");
-            TypeAssurance typeAssurance = OutilsConsole.PosezTypeAssurance("Type D'assurance : ");
+            TypeAssurance typeAssurance = OutilsConsole.PosezTypeAssurance("Type D'assurance : \n0-Annulation");
             Services.CreerAssurance(montant, typeAssurance);
         }
 

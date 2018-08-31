@@ -16,9 +16,11 @@ namespace Projet_02.Sous_menus
             {
                 InformationAffichage.Creer<Client>(x=>x.Id, "Id", 3),
                 InformationAffichage.Creer<Client>(x=>x.Nom, "Nom", 10),
-                InformationAffichage.Creer<Client>(x=>x.Prenom, "Prenom", 10),
-                InformationAffichage.Creer<Client>(x=>x.Email, "Email", 15),
+                InformationAffichage.Creer<Client>(x=>x.Prenom, "Prenom", 15),
+                InformationAffichage.Creer<Client>(x=>x.Email, "Email", 20),
                 InformationAffichage.Creer<Client>(x=>x.DateNaissance, "Date", 10),
+                InformationAffichage.Creer<Client>(x=>x.Adresse, "Adresse", 30),
+                InformationAffichage.Creer<Client>(x=>x.Telephone, "Telephone", 11),
             };
 
         private readonly IEnumerable<Client> liste = new List<Client>();
