@@ -53,7 +53,8 @@ namespace Projet_02
 
         private void AfficherToutClient()
         {
-            ConsoleHelper.AfficherEntete("Afficher");
+            SMAfficherClient SMAfficherClient = new SMAfficherClient(Application, "Creer Client");
+            SMAfficherClient.Afficher();
         }
 
         private void ChercherClient()
@@ -63,13 +64,15 @@ namespace Projet_02
 
         private void CreerClient()
         {
-            SMCreerClient sMCreerClient = new SMCreerClient(Application,"Creer Client");
-            sMCreerClient.Afficher();
-        }
+            ConsoleHelper.AfficherEntete("Creer un client");
+            OutilsConsole.PosezQuestionObligatoire("Nom : ");
+            OutilsConsole.PosezQuestionObligatoire("Prenom : ");
+            OutilsConsole.PosezQuestionObligatoire("Civilité : ");
+            OutilsConsole.PosezQuestionObligatoire("Adresse : ");
+            OutilsConsole.PosezQuestionObligatoire("Telephone : ");
+            OutilsConsole.PosezQuestionObligatoire("Date de Naissance : ");
+            OutilsConsole.PosezQuestion("Email :");
 
-        private void AfficherParNom()
-        {
-            ConsoleHelper.AfficherEntete("Afficher");
         }
     }
 }

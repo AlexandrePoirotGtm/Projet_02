@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BoVoyage.Framework.UI;
+using Projet_02.Sous_menus;
 
 namespace Projet_02
 {
@@ -45,7 +46,8 @@ namespace Projet_02
 
         private void AfficherDestinations()
         {
-            ConsoleHelper.AfficherEntete("Afficher");
+            SMAfficherDestination SMAfficherDestination = new SMAfficherDestination(Application, "Afficher les Destinations");
+            SMAfficherDestination.Afficher();
         }
     }
 }

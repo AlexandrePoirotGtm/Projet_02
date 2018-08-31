@@ -38,8 +38,8 @@ namespace Projet_02
 
         private void AfficherDossier()
         {
-            SMCreerClient sMCreerClient = new SMCreerClient(Application, "Creer Client");
-            sMCreerClient.Afficher();
+            SMAfficherDossier SMAfficherDossier = new SMAfficherDossier(Application, "Afficher les Dossiers");
+            SMAfficherDossier.Afficher();
         }
     }
 }

@@ -22,11 +22,11 @@ namespace Projet_02.Sous_menus
             {
                 FonctionAExecuter = this.AfficherParNum
             });
-            menu.AjouterElement(new ElementMenu("2", "Afficher voyages par Clients")
+            menu.AjouterElement(new ElementMenu("2", "Afficher Dossier par Clients")
             {
                 FonctionAExecuter = this.AfficherParClients
             });
-            menu.AjouterElement(new ElementMenuQuitterMenu("R", "Revenir au menu principal..."));
+            menu.AjouterElement(new ElementMenuQuitterMenu("R", "Revenir au menu precedent..."));
         }
 
         private void AfficherParNum()
