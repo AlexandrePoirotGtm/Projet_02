@@ -134,7 +134,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour trier des client par Prenom. Cherche pour son Prenom.
         /// </summary>
-        public IEnumerable<Client> TrierClientParPrenom( )
+        public static IEnumerable<Client> TrierClientParPrenom( )
         {
             using (var contexte = new Contexte())
             {
@@ -144,7 +144,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour trier des client par Prenom. Cherche pour son Prenom.
         /// </summary>
-        public IEnumerable<Client> TrierClientParNol()
+        public static IEnumerable<Client> TrierClientParNol()
         {
             using (var contexte = new Contexte())
             {

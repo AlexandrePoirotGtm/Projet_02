@@ -20,7 +20,7 @@ namespace Data
         public DateTime DateRetour { get; set; }
 
         [Column("PlaceDisponibles")]
-        public int PlaceDisponibles { get; set; }
+        public int PlacesDisponibles { get; set; }
 
         [Column("PrixParPersonne")]
         public decimal PrixParPersonne { get; set; }
