@@ -4,14 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BoVoyage.Framework.UI;
+using Data;
+using Data.Service;
 
 namespace Projet_02.Sous_menus
 {
     class SMAfficherClient : ModuleBase<Application>
     {
+        private static readonly List<InformationAffichage> strategieAffichageClients =
+            new List<InformationAffichage>
+            {
+                InformationAffichage.Creer<Client>(x=>x.Id, "Id", 3),
+                InformationAffichage.Creer<Client>(x=>x.Nom, "Nom", 10),
+                InformationAffichage.Creer<Client>(x=>x.Prenom, "Prenom", 10),
+                InformationAffichage.Creer<Client>(x=>x.Email, "Email", 15),
+                InformationAffichage.Creer<Client>(x=>x.DateNaissance, "Date", 10),
+            };
+
+        private readonly IEnumerable<Client> liste = new List<Client>();
+
         public SMAfficherClient(Application application, string nomModule)
             : base(application, nomModule)
         {
+            ServiceClient serviceClient = new ServiceClient();
+            liste = serviceClient.GetClients();
         }
 
         protected override void InitialiserMenu(Menu menu)
@@ -30,7 +46,7 @@ namespace Projet_02.Sous_menus
 
         private void AfficherPrenom()
         {
-            Console.WriteLine("clients");
+            ConsoleHelper.AfficherListe(this.liste, strategieAffichageClients);
         }
 
         private void AfficherNom()
