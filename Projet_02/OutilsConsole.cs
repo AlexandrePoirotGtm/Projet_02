@@ -138,5 +138,18 @@ namespace Projet_02
             };
             return resultat;
         }
+
+        public static int CalculerAge(DateTime dateNaissance)
+        {
+            return (int)((DateTime.Today - dateNaissance).Days / 365.25);
+        }
+
+        public static float CalculerPromo(int age)
+        {
+            if (age > 12)
+                return 0;
+            else
+                return 0.20f;
+        }
     }
 }

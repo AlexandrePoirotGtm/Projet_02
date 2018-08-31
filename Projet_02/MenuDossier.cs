@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BoVoyage.Framework.UI;
 using Metier;
 using Projet_02.Sous_menus;
+using Data;
 
 namespace Projet_02
 {
@@ -34,9 +35,21 @@ namespace Projet_02
         private void CréerDossier()
         {
             ConsoleHelper.AfficherEntete("Création D'un Dossier");
-            OutilsConsole.PosezNombre("Nombre de Voyageurs : ");
-            //Appelent Création Voyageurs qui va demander les reductions et calculer le prix
-            OutilsConsole.PosezQuestionObligatoire("Numéro de Carte Bancaire : ");
+
+            Console.WriteLine("Reserver pour quelle voyage : ");
+            int IdVoyage = Affichage.AfficherListeVoyages();
+            Console.Clear();
+            Console.WriteLine("Quel Clients : ");
+            int IdCLient = Affichage.AfficherListeClients();
+
+            int nombreVoyageurs;
+
+            while ((nombreVoyageurs = OutilsConsole.PosezNombre("Nombre de Voyageurs : ")) > 9);
+            List<Participant> participants;
+            participants = Affichage.CreerParticpants(nombreVoyageurs);
+            string CarteBancaire = OutilsConsole.PosezQuestionObligatoire("Numéro de Carte Bancaire : ");
+
+            Services.CreerDossier(IdVoyage, IdCLient, nombreVoyageurs,participants ,CarteBancaire);
         }
 
         private void AfficherDossier()

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BoVoyage.Framework.UI;
 using Data;
 using Data.Service;
+using Metier;
 
 namespace Projet_02
 {
@@ -44,17 +45,61 @@ namespace Projet_02
                 InformationAffichage.Creer<Destination>(x=>x.Description, "Description", 50),
             };
 
+        internal static List<Participant> CreerParticpants(int nombreParticipants)
+        {
+            List<Participant> Participants = new List<Participant>();
+            for (int i = 0; i <= nombreParticipants; i++)
+            {
+                ConsoleHelper.AfficherEntete("Creer un Participant");
+                string nom = OutilsConsole.PosezQuestionObligatoire("Nom : ");
+                string prenom = OutilsConsole.PosezQuestionObligatoire("Prenom : ");
+                string civilite = OutilsConsole.PosezQuestionObligatoire("Civilité : ");
+                string adresse = OutilsConsole.PosezQuestionObligatoire("Adresse : ");
+                string telephone = OutilsConsole.PosezQuestionObligatoire("Telephone : ");
+                DateTime dateNaissance = OutilsConsole.PosezDate("Date de Naissance : ");
+                string email = OutilsConsole.PosezQuestion("Email :");
+                int age = OutilsConsole.CalculerAge(dateNaissance);
+                
+                Services.CreerParticpant(nom, prenom, civilite, adresse, telephone, dateNaissance, age, OutilsConsole.CalculerPromo(age));
+            }
+            return Participants;
+        }
+
         private static IEnumerable<Destination> listeDestinations = new List<Destination>();
 
+        private static readonly List<InformationAffichage> strategieAffichageVoyages =
+            new List<InformationAffichage>
+            {
+                InformationAffichage.Creer<Voyage>(x=>x.Id, "Id", 3),
+                InformationAffichage.Creer<Voyage>(x=>x.DateAller, "DateAller", 15),
+                InformationAffichage.Creer<Voyage>(x=>x.DateRetour, "DateRetour", 15),
+                InformationAffichage.Creer<Voyage>(x=>x.PlacesDisponibles, "Places", 3),
+                InformationAffichage.Creer<Voyage>(x=>x.PrixParPersonne, "Prix/Personne", 5),
+            };
+
+        private static IEnumerable<Voyage> listeVoyages = new List<Voyage>();
+
         public static int AfficherListeDestinations()
-        {           
+        {
             listeDestinations = ServiceDestination.GetDestinations();
-            ConsoleHelper.AfficherListe(listeDestinations, strategieAffichageDestiniations);
+            ConsoleHelper.AfficherListe(listeDestinations, strategieAffichageVoyages);
             int id;
             do
             {
                 id = OutilsConsole.PosezNombre("Tapez l'ID");
             } while (!ServiceDestination.ChercherDestination(id));
+            return id;
+        }
+
+        public static int AfficherListeVoyages()
+        {           
+            listeVoyages = ServiceVoyage.GetVoyages();
+            ConsoleHelper.AfficherListe(listeVoyages, strategieAffichageVoyages);
+            int id;
+            do
+            {
+                id = OutilsConsole.PosezNombre("Tapez l'ID");
+            } while (!ServiceVoyage.ChercherVoyage(id));
             return id;
         }
 
@@ -69,16 +114,19 @@ namespace Projet_02
             } while (!ServiceAgenceVoyage.ChercherAgence(id));
             return id;
         }
+
         public static int AfficherListeClients()
         {
+            listeClients = ServiceClient.GetClients();
             ConsoleHelper.AfficherListe(listeClients, strategieAffichageClients);
-            return OutilsConsole.PosezNombre("Quel");
+            int id;
+            do
+            {
+                id = OutilsConsole.PosezNombre("Tapez l'ID");
+            } while (!ServiceClient.ChercherClient(id));
+            return id;
         }
-        /*public static int AfficherListeVoyages()
-        {
-            ConsoleHelper.AfficherListe(listeVoyages, strategieAffichageVoyages);
-            return OutilsConsole.PosezNombre("rentrez ID:");
-        }
+/*
         public static int AfficherListeDossiers()
         {
             ConsoleHelper.AfficherListe(ListeDossiers, strategieAffichageDossiers);
