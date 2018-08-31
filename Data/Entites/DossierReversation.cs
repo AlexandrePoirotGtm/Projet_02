@@ -8,11 +8,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Data
 {
     public class DossierReservation
-    {
+    {       
         public int Id { get; set; }        
         public string NumeroCarteBancaire { get; set; }
         public decimal PrixParPersonne { get; set; }
-
+        public Etat EtatDossierReservation { get; set; }
         [NotMapped]
         public decimal PrixTotal { get; set; }
              

@@ -63,6 +63,7 @@
     <Compile Include="Service\ServiceAssurance.cs" />
     <Compile Include="Service\ServiceClient.cs" />
     <Compile Include="Service\ServiceDestination.cs" />
+    <Compile Include="Service\ServiceDossierReservation.cs" />
     <Compile Include="Service\ServiceParticipant.cs" />
     <Compile Include="Service\ServiceVoyage.cs" />
   </ItemGroup>
