@@ -6,11 +6,24 @@ using System.Threading.Tasks;
 using BoVoyage.Framework.UI;
 using Projet_02.Sous_menus;
 using Metier;
+using Data;
+using Data.Service;
 
 namespace Projet_02
 {
     public class MenuDestination : ModuleBase<Application>
     {
+        private static readonly List<InformationAffichage> strategieAffichageClients =
+            new List<InformationAffichage>
+            {
+                InformationAffichage.Creer<Destination>(x=>x.Id, "Id", 3),
+                InformationAffichage.Creer<Destination>(x=>x.Continent, "Continent", 20),
+                InformationAffichage.Creer<Destination>(x=>x.Pays, "Pays", 15),
+                InformationAffichage.Creer<Destination>(x=>x.Region, "Region", 20),
+                InformationAffichage.Creer<Destination>(x=>x.Description, "Description", 50),
+            };
+
+        private  IEnumerable<Destination> liste = new List<Destination>();
 
         public MenuDestination(Application application, string nomModule)
             : base(application, nomModule)
@@ -24,7 +37,7 @@ namespace Projet_02
             {
                 FonctionAExecuter = this.AfficherDestinations
             });
-            menu.AjouterElement(new ElementMenu("2", "Chercher une agences")
+            menu.AjouterElement(new ElementMenu("2", "Chercher une destination")
             {
                 FonctionAExecuter = this.ChercherDestination
             });
@@ -48,13 +61,16 @@ namespace Projet_02
 
         private void ChercherDestination()
         {
-            ConsoleHelper.AfficherEntete("Afficher");
+            SMAfficherDestination sMAfficherDestination = new SMAfficherDestination(Application, "Chercher Destination");
+            sMAfficherDestination.Afficher();
+            
         }
 
         private void AfficherDestinations()
         {
-            SMAfficherDestination SMAfficherDestination = new SMAfficherDestination(Application, "Afficher les Destinations");
-            SMAfficherDestination.Afficher();
+            ServiceDestination serviceDestination = new ServiceDestination();
+            liste = serviceDestination.GetDestinations();
+            ConsoleHelper.AfficherListe(this.liste, strategieAffichageClients);
         }
     }
 }
