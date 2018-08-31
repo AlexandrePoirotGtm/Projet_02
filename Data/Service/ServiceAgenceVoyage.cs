@@ -74,5 +74,20 @@ namespace Data.Service
             }
             return trouver;
         }
+        /// <summary>
+        /// méthode pour afficher une liste de voyage qui sont d'une agence
+        /// </summary>
+        /// <param name="idAgence">identifiant de l'agence</param>
+        /// <returns></returns>
+        public IEnumerable<Voyage> GetVoyagesParAgence(int idAgence)
+        {
+            using(var contexte = new Contexte())
+            {
+                var voyages = (from ag in contexte.AgenceVoyages
+                               where ag.Id == idAgence
+                               select ag.Voyages).Single();
+                return voyages;
+            }
+        }
     }
 }

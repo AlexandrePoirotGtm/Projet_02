@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class Agence : Personne
+    public class Client : Personne
     {
-        public Agence()
+        public Client()
         {
         }
-        public Agence(string civ, string nom, string prenom, string adresse,string tel,DateTime dateNaissance)
+        public Client(string civ, string nom, string prenom, string adresse,string tel,DateTime dateNaissance)
         {
             Nom = nom;
             Prenom = prenom;

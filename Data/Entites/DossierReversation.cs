@@ -15,7 +15,7 @@ namespace Data
         public decimal PrixTotal { get; set; }
 
         public Voyage Voyage { get; set; }
-        public Agence Client { get; set; }
+        public Client Client { get; set; }
         public Participant[] Participants { get; set; }
         //List<Participant> Participants { get; set; }
         public List<Assurance> Assurances { get; set; }

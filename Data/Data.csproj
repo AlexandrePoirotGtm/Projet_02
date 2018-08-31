@@ -51,7 +51,7 @@
     <Compile Include="DAL\Contexte.cs" />
     <Compile Include="Entites\AgenceVoyage.cs" />
     <Compile Include="Entites\Assurance.cs" />
-    <Compile Include="Entites\client.cs" />
+    <Compile Include="Entites\Client.cs" />
     <Compile Include="Entites\Destination.cs" />
     <Compile Include="Entites\DossierReversation.cs" />
     <Compile Include="Enumeration.cs" />
@@ -60,9 +60,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entites\Voyage.cs" />
     <Compile Include="Service\ServiceAgenceVoyage.cs" />
+    <Compile Include="Service\ServiceAssurance.cs" />
     <Compile Include="Service\ServiceClient.cs" />
     <Compile Include="Service\ServiceDestination.cs" />
     <Compile Include="Service\ServiceParticipant.cs" />
+    <Compile Include="Service\ServiceVoyage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

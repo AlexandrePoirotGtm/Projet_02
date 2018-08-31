@@ -9,7 +9,7 @@ namespace Data.DAL
 {
     public class Contexte: DbContext
     {
-        public virtual DbSet<Agence> Client { get; set; }
+        public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet<Participant> Participants { get; set; }
         public virtual DbSet<AgenceVoyage> AgenceVoyages { get; set; }
         public virtual DbSet<Voyage> Voyages { get; set; }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Data.DAL;
 using System.Data.Entity;
+
 namespace Data.Service
 {
     public  class ServiceClient
@@ -12,7 +13,7 @@ namespace Data.Service
         /// <summary>
             /// méthode pour afficher des instances de la table client
             /// </summary>
-        public IEnumerable<Agence> GetClients()
+        public IEnumerable<Client> GetClients()
         {
             using (var contexte = new Contexte())
             {
@@ -24,7 +25,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour afficher des instances de la table client
         /// </summary>
-        public Agence GetClient(int IdClient)
+        public Client GetClient(int IdClient)
         {
             using (var contexte = new Contexte())
             {
@@ -37,10 +38,10 @@ namespace Data.Service
         /// <summary>
         /// méthode pour créer une nouvelle instance du client sur la base.
 		/// </summary>
-		public void CreerClient(Agence c)
+		public void CreerClient(Client c)
         {
             using (var contexte = new Contexte())
-            {
+            {                
                 contexte.Client.Add(c);
                 contexte.SaveChanges();
             }
@@ -48,6 +49,7 @@ namespace Data.Service
         /// <summary>
 		/// méthode pour effacer une instance du client sur la base pour son id.
 		/// </summary>
+        /// <param name="idClient">identifiant du client</param>
 		public void EffacerClient(int idClient)
         {
             using (var contexte = new Contexte())
@@ -59,6 +61,23 @@ namespace Data.Service
                 contexte.SaveChanges();
             }
         }
+
+        /*
+        /// <summary>
+		/// méthode pour effacer une instance du client sur la base pour son id.
+		/// </summary>
+        /// <param name="client">obj client</param>
+		public void EffacerClient(Client client)
+        {
+            using (var contexte = new Contexte())
+            {
+                contexte.
+                contexte.Client.Remove(client);
+                contexte.SaveChanges();
+            }
+        }
+        */
+
         /// <summary>
 		/// méthode pour voir si un client est dans la base. Cherche pour son id.
 		/// </summary>
