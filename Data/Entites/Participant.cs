@@ -10,6 +10,19 @@ namespace Data
     [Table("Participants")]
     public class Participant : Personne
     {
+        public Participant()
+        {
+        }
+        public Participant(string civ, string nom, string prenom, string adresse, string tel, DateTime dateNaissance,float red)
+        {
+            Nom = nom;
+            Prenom = prenom;
+            Adresse = adresse;
+            Civilite = civ;
+            Telephone = tel;
+            DateNaissance = dateNaissance;
+            Reduction = red;            
+        }
         [Column("Reduction")]
         public float Reduction { get; set; }
 

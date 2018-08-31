@@ -73,7 +73,6 @@ namespace Data.Service
                 contexte.Entry(dossier).State = EntityState.Modified;
                 contexte.SaveChanges();
             }
-        }
-        
+        }        
     }
 }

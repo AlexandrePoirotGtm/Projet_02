@@ -17,7 +17,7 @@ namespace Data.Service
             using (var contexte = new Contexte())
             {
                 var agences = (from av in contexte.AgenceVoyages
-                               select av).ToList();
+                               select av).Include(x => x.Voyages).ToList();
                 return agences;
             }
         }
@@ -30,7 +30,7 @@ namespace Data.Service
             {
                 var agence = (from av in contexte.AgenceVoyages
                               where av.Id == IdAgence
-                              select av).Single();
+                              select av).Include(x => x.Voyages).Single();
                 return agence;
             }
         }
