@@ -15,6 +15,19 @@ namespace Data.DAL
         public virtual DbSet<Voyage> Voyages { get; set; }
         public virtual DbSet<Destination> Destinations { get; set; }
         public virtual DbSet<Assurance> Assurances { get; set; }
-        public virtual DbSet<DossierReservation> DossierReservations { get; set; }       
+        public virtual DbSet<DossierReservation> DossierReservations { get; set; }    
+        
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<DossierReservation>()
+                .HasMany(c => c.Assurances)
+                .WithMany()
+                .Map(x => 
+                {
+                    x.MapLeftKey("IdDossierReservation");
+                    x.MapRightKey("IdAssurance");
+                    x.ToTable("DossierReservationsAssurances");
+                });
+        }
     }
 }
