@@ -4,16 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BoVoyage.Framework.UI;
+using Metier;
+using Data;
+using Data.Service;
 
 namespace Projet_02
 {
     public class MenuAgence : ModuleBase<Application>
     {
+        private static readonly List<InformationAffichage> strategieAffichageClients =
+            new List<InformationAffichage>
+            {
+                InformationAffichage.Creer<AgenceVoyage>(x=>x.Id, "Id", 3),
+                InformationAffichage.Creer<AgenceVoyage>(x=>x.Nom, "Nom", 20),
+            };
+
+        private  IEnumerable<AgenceVoyage> liste = new List<AgenceVoyage>();
 
         public MenuAgence(Application application, string nomModule)
             : base(application, nomModule)
-        {
-
+        {  
         }
 
         protected override void InitialiserMenu(Menu menu)
@@ -22,11 +32,7 @@ namespace Projet_02
             {
                 FonctionAExecuter = this.AfficherAgences
             });
-            menu.AjouterElement(new ElementMenu("2", "Chercher une agences")
-            {
-                FonctionAExecuter = this.ChercherAgences
-            });
-            menu.AjouterElement(new ElementMenu("3", "Creer une nouvelle agence")
+            menu.AjouterElement(new ElementMenu("2", "Creer une nouvelle agence")
             {
                 FonctionAExecuter = this.CreerAgence
             });
@@ -36,17 +42,16 @@ namespace Projet_02
         private void CreerAgence()
         {
             ConsoleHelper.AfficherEntete("Creer Une Agence");
-            OutilsConsole.PosezQuestionObligatoire("Nom : ");
-        }
-
-        private void ChercherAgences()
-        {
-            ConsoleHelper.AfficherEntete("Afficher");
+            string nom = OutilsConsole.PosezQuestionObligatoire("Nom : ");
+            Services.CreerAgences(nom);
         }
 
         private void AfficherAgences()
         {
             ConsoleHelper.AfficherEntete("Afficher");
+            ServiceAgenceVoyage serviceAgenceVoyage = new ServiceAgenceVoyage();
+            liste = serviceAgenceVoyage.GetAgences();
+            ConsoleHelper.AfficherListe(this.liste, strategieAffichageClients);
         }
     }
 }

@@ -52,7 +52,7 @@ namespace Data
         [NotMapped]
         public List<Participant> Participants { get; set; }
 
-        [NotMapped]        
+        //[NotMapped]        
         public List<Assurance> Assurances { get; set; }
 
 

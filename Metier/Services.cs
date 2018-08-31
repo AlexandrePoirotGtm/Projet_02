@@ -9,6 +9,7 @@ namespace Metier
 {
     public static class Services
     {
+        //Methodes De cration
         public static void CreerClient(string nom, string prenom, string civilite, string adresse, string telephone, DateTime dateNaissance, string email)
         {
             Client cli = new Client
@@ -51,5 +52,22 @@ namespace Metier
             ServiceDestination serviceDestination = new ServiceDestination();
             serviceDestination.CreerDestination(destination);
         }
+
+        public static void CreerAgences(string nom)
+        {
+            AgenceVoyage agenceVoyage = new AgenceVoyage
+            {
+                Nom = nom
+            };
+            ServiceAgenceVoyage serviceAgenceVoyage = new ServiceAgenceVoyage();
+            serviceAgenceVoyage.CreerAgence(agenceVoyage);
+        }
+    
+        public static void CreerVoyages()
+        {
+            
+        }
+
+     
     }
 }
