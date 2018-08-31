@@ -53,7 +53,8 @@
     <Compile Include="Entites\Assurance.cs" />
     <Compile Include="Entites\Client.cs" />
     <Compile Include="Entites\Destination.cs" />
-    <Compile Include="Entites\DossierReversation.cs" />
+    <Compile Include="Entites\DossierReservationsAssurance.cs" />
+    <Compile Include="Entites\DossierResersation.cs" />
     <Compile Include="Enumeration.cs" />
     <Compile Include="Entites\Participant.cs" />
     <Compile Include="Entites\Personne.cs" />

@@ -59,6 +59,34 @@ namespace Data.Service
                 contexte.SaveChanges();
             }
         }
+
+        /// <summary>
+		/// méthode pour effacer une instance de destination sur la base pour son OBJ.
+		/// </summary>
+        /// <param name="dest">obj destination</param>
+		public void EffacerDestination(Destination dest)
+        {
+            using (var contexte = new Contexte())
+            {
+                contexte.Entry(dest).State = EntityState.Deleted;
+                contexte.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// méthode pour Modifier une instance de destination sur la base pour son OBJ.
+        /// </summary>
+        /// <param name="dest">obj destination</param>
+        public void ModifierDestination(Destination dest)
+        {
+            using (var contexte = new Contexte())
+            {
+                contexte.Destinations.Attach(dest);
+                contexte.Entry(dest).State = EntityState.Modified;
+                contexte.SaveChanges();
+            }
+        }
+
         /// <summary>
 		/// méthode pour voir si un destination est dans la base. Cherche pour son id.
 		/// </summary>

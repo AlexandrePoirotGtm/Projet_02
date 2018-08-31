@@ -61,22 +61,33 @@ namespace Data.Service
                 contexte.SaveChanges();
             }
         }
-
-        /*
+        
         /// <summary>
-		/// méthode pour effacer une instance du client sur la base pour son id.
+		/// méthode pour effacer une instance du client sur la base pour son OBJ.
 		/// </summary>
         /// <param name="client">obj client</param>
 		public void EffacerClient(Client client)
         {
             using (var contexte = new Contexte())
             {
-                contexte.
-                contexte.Client.Remove(client);
+                contexte.Entry(client).State = EntityState.Deleted;
                 contexte.SaveChanges();
             }
         }
-        */
+
+        /// <summary>
+        /// méthode pour Modifier une instance du client sur la base pour son OBJ.
+        /// </summary>
+        /// <param name="client">obj client</param>
+        public void ModifierClient(Client client)
+        {
+            using (var contexte = new Contexte())
+            {
+                contexte.Client.Attach(client);
+                contexte.Entry(client).State = EntityState.Modified;
+                contexte.SaveChanges();
+            }
+        }
 
         /// <summary>
 		/// méthode pour voir si un client est dans la base. Cherche pour son id.
