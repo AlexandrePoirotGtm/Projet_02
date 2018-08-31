@@ -34,14 +34,18 @@ namespace Projet_02
         {
             string reponse;
             DateTime resultat;
+            DateTime datemin = DateTime.Parse("01/01/1753");
             Console.WriteLine(question);
             reponse = Console.ReadLine();
-            while (!DateTime.TryParse(reponse ,out resultat))
-            {
-                ConsoleHelper.AfficherMessageErreur("Format incorrect\nVeuillez Recommancer : ");
-                Console.WriteLine(question);
-                reponse = Console.ReadLine();
+
+
+            while ( (!DateTime.TryParse(reponse, out resultat))  | ((resultat.CompareTo(datemin) < 0)) )
+               {
+                         ConsoleHelper.AfficherMessageErreur("Format incorrect ou date plus trop vieille\nVeuillez Recommancer : ");
+                        Console.WriteLine(question);
+                         reponse = Console.ReadLine();                  
             };
+            
             return resultat;
         }
 
