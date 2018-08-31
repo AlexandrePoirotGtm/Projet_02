@@ -37,10 +37,11 @@ namespace Data.Service
         /// <summary>
         /// méthode pour créer une nouvelle instance du participant sur la base.
 		/// </summary>
-		public static void CreerParticipant(Participant p)
+		public static void CreerParticipant(Participant p,int IdDossier)
         {
             using (var contexte = new Contexte())
             {
+                p.IdDossierReservation = IdDossier;
                 contexte.Participants.Add(p);
                 contexte.SaveChanges();
             }
@@ -73,6 +74,7 @@ namespace Data.Service
                 if (participant != 0) { trouver = true; }
             }
             return trouver;
-        }        
+        }
+        
     }
 }
