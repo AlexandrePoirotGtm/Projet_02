@@ -28,7 +28,7 @@ namespace Data.Service
         {
             using (var contexte = new Contexte())
             {
-                var agence = (from av in contexte.Client
+                var agence = (from av in contexte.AgenceVoyages
                               where av.Id == IdAgence
                               select av).Single();
                 return agence;

@@ -18,7 +18,34 @@ namespace Projet_02
 
         protected override void InitialiserMenu(Menu menu)
         {
+            menu.AjouterElement(new ElementMenu("1", "Afficher toutes les agences")
+            {
+                FonctionAExecuter = this.AfficherAgences
+            });
+            menu.AjouterElement(new ElementMenu("2", "Chercher une agences")
+            {
+                FonctionAExecuter = this.ChercherAgences
+            });
+            menu.AjouterElement(new ElementMenu("3", "Creer une nouvelle agence")
+            {
+                FonctionAExecuter = this.CreerAgence
+            });
+            menu.AjouterElement(new ElementMenuQuitterMenu("R", "Revenir au menu principal..."));
+        }
 
+        private void CreerAgence()
+        {
+            ConsoleHelper.AfficherEntete("Afficher");
+        }
+
+        private void ChercherAgences()
+        {
+            ConsoleHelper.AfficherEntete("Afficher");
+        }
+
+        private void AfficherAgences()
+        {
+            ConsoleHelper.AfficherEntete("Afficher");
         }
     }
 }

@@ -42,13 +42,23 @@ namespace Projet_02
             });
             menu.AjouterElement(new ElementMenu("2", "Chercher un client")
             {
-                FonctionAExecuter = this.CreerClient
+                FonctionAExecuter = this.ChercherClient
             });
             menu.AjouterElement(new ElementMenu("3", "Afficher Tout les clients")
             {
-                FonctionAExecuter = this.CreerClient
+                FonctionAExecuter = this.AfficherToutClient
             });
             menu.AjouterElement(new ElementMenuQuitterMenu("R", "Revenir au menu principal..."));
+        }
+
+        private void AfficherToutClient()
+        {
+            ConsoleHelper.AfficherEntete("Afficher");
+        }
+
+        private void ChercherClient()
+        {
+            ConsoleHelper.AfficherEntete("Afficher");
         }
 
         private void CreerClient()

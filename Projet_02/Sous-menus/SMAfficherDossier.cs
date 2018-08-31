@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using BoVoyage.Framework.UI;
 
-namespace Projet_02
+namespace Projet_02.Sous_menus
 {
-    public class MenuAssurance : ModuleBase<Application>
+    class SMAfficherDossier : ModuleBase<Application>
     {
 
-        public MenuAssurance(Application application, string nomModule)
+        public SMAfficherDossier(Application application, string nomModule)
             : base(application, nomModule)
         {
 
@@ -18,26 +18,25 @@ namespace Projet_02
 
         protected override void InitialiserMenu(Menu menu)
         {
-            menu.AjouterElement(new ElementMenu("1", "Afficher toutes les Assurances")
+            menu.AjouterElement(new ElementMenu("1", "Afficher Dossier Par Numéro de dossier")
             {
-                FonctionAExecuter = this.AfficherAssurance
+                FonctionAExecuter = this.AfficherParNum
             });
-            menu.AjouterElement(new ElementMenu("2", "Créer une nouvelle assurances")
+            menu.AjouterElement(new ElementMenu("2", "Afficher voyages par Clients")
             {
-                FonctionAExecuter = this.CréerAssurances
+                FonctionAExecuter = this.AfficherParClients
             });
             menu.AjouterElement(new ElementMenuQuitterMenu("R", "Revenir au menu principal..."));
         }
 
-        private void CréerAssurances()
+        private void AfficherParNum()
         {
             ConsoleHelper.AfficherEntete("Afficher");
         }
 
-        private void AfficherAssurance()
+        private void AfficherParClients()
         {
             ConsoleHelper.AfficherEntete("Afficher");
         }
     }
-
 }

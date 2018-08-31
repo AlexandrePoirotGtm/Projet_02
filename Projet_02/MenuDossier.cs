@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BoVoyage.Framework.UI;
 using Metier;
+using Projet_02.Sous_menus;
 
 namespace Projet_02
 {
@@ -19,25 +20,26 @@ namespace Projet_02
 
         protected override void InitialiserMenu(Menu menu)
         {
-            menu.AjouterElement(new ElementMenu("1", "Afficher Dossier Par Numéro de dossier")
+            menu.AjouterElement(new ElementMenu("1", "Afficher Dossiers")
             {
-                FonctionAExecuter = this.AfficherParNum
+                FonctionAExecuter = this.AfficherDossier
             });
-            menu.AjouterElement(new ElementMenu("2", "Afficher voyages par Clients")
+            menu.AjouterElement(new ElementMenu("2", "Créer")
             {
-                FonctionAExecuter = this.AfficherParClients
+                FonctionAExecuter = this.CréerDossier
             });
             menu.AjouterElement(new ElementMenuQuitterMenu("R", "Revenir au menu principal..."));
         }
 
-        private void AfficherParNum()
+        private void CréerDossier()
         {
             ConsoleHelper.AfficherEntete("Afficher");
         }
 
-        private void AfficherParClients()
+        private void AfficherDossier()
         {
-            ConsoleHelper.AfficherEntete("Afficher");
+            SMCreerClient sMCreerClient = new SMCreerClient(Application, "Creer Client");
+            sMCreerClient.Afficher();
         }
     }
 }

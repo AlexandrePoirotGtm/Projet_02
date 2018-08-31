@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BoVoyage.Framework.UI;
 using Metier;
 using Data;
+using Projet_02.Sous_menus;
 
 
 namespace Projet_02
@@ -34,28 +35,27 @@ namespace Projet_02
 
         protected override void InitialiserMenu(Menu menu)
         {
-            menu.AjouterElement(new ElementMenu("1", "Afficher voyages par Agences")
+            menu.AjouterElement(new ElementMenu("1", "Afficher les voyages")
             {
-                FonctionAExecuter = this.AfficherParAgences
+                FonctionAExecuter = this.AfficherVoyages
             });
-            menu.AjouterElement(new ElementMenu("2", "Afficher voyages par Destinations")
+            menu.AjouterElement(new ElementMenu("2", "Creer un nouveau voyage")
             {
-                FonctionAExecuter = this.AfficherParDestinations
+                FonctionAExecuter = this.CreerVoyage
             });
             menu.AjouterElement(new ElementMenuQuitterMenu("R", "Revenir au menu principal..."));
         }
 
-        private void AfficherParAgences()
+        private void CreerVoyage()
         {
-
-            ConsoleHelper.AfficherEntete("Afficher");
-
-            
+            Console.WriteLine("Rajout d'un voyage");
         }
 
-        private void AfficherParDestinations()
+        private void AfficherVoyages()
         {
-            ConsoleHelper.AfficherEntete("Afficher");
+
+            SMAfficherVoyages SMAfficherVoyages = new SMAfficherVoyages(Application, "Afficher Les Voyages");
+            SMAfficherVoyages.Afficher();
 
 
         }
