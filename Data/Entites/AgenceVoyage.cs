@@ -12,7 +12,9 @@ namespace Data
     {
         public int Id { get; set; }
         public string Nom { get; set; }
+        /*[NotMapped]
+        public List<Voyage> Voyages { get; set; }*/
         [NotMapped]
-        public List<Voyage> Voyages { get; set; }
+        public virtual ICollection<Voyage> Voyages { get; set; }
     }
 }

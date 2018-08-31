@@ -10,6 +10,7 @@ namespace Data
     [Table("DossierReservations")]
     public class DossierReservation
     {
+
         public DossierReservation()
         {
         }

@@ -73,7 +73,6 @@ namespace Data.Service
                 if (participant != 0) { trouver = true; }
             }
             return trouver;
-        }
-
+        }        
     }
 }

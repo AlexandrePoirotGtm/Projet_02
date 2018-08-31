@@ -19,7 +19,7 @@ namespace Data
         [Column("DateRetour")]
         public DateTime DateRetour { get; set; }
 
-        [Column("PlaceDisponibles")]
+        [Column("PlacesDisponibles")]
         public int PlacesDisponibles { get; set; }
 
         [Column("PrixParPersonne")]
