@@ -48,10 +48,12 @@ namespace Data
 
         [NotMapped]
         public decimal PrixTotal { get; set; }
+
         /*     
         public Voyage Voyage { get; set; }
         public Client Client { get; set; }
         */
+
         [Column("IdVoyage")]
         public int IdVoyage { get; set; }
         [ForeignKey("IdVoyage")]
@@ -65,7 +67,7 @@ namespace Data
         [NotMapped]
         public List<Participant> Participants { get; set; }
 
-        //[NotMapped]        
+        //[NotMapped]      -    
         public List<Assurance> Assurances { get; set; }
 
 

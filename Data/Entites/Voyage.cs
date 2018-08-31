@@ -10,18 +10,29 @@ namespace Data
     [Table("Voyages")]
     public class Voyage
     {
+        [Column("Id")]
         public int Id { get; set; }
+
+        [Column("DateAller")]
         public DateTime DateAller { get; set; }
+
+        [Column("DateRetour")]
         public DateTime DateRetour { get; set; }
+
+        [Column("PlaceDisponibles")]
         public int PlaceDisponibles { get; set; }
+
+        [Column("PrixParPersonne")]
         public decimal PrixParPersonne { get; set; }
 
         //public Destination Destination { get; set; }
+        [Column("IdDestination")]
         public int IdDestination { get; set; }
 
         [ForeignKey("IdDestination")]
         public virtual Destination Destination { get; set; }
 
+        [Column("IdAgenceVoyage")]
         public int IdAgenceVoyage { get; set; }
 
         [ForeignKey("IdAgenceVoyage")]

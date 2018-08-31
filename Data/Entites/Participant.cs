@@ -10,8 +10,10 @@ namespace Data
     [Table("Participants")]
     public class Participant : Personne
     {
-        
+        [Column("Reduction")]
         public float Reduction { get; set; }
+
+        [Column("IdDossierReservation")]
         public int IdDossierReservation { get; set; }
 
         [ForeignKey("IdDossierReservation")]

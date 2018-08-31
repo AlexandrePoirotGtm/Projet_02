@@ -22,10 +22,13 @@ namespace Data
             Telephone = tel;
             DateNaissance = dateNaissance;
         }
+
+        [Column("Email")]
         public string Email { get; set; }
+
         [NotMapped]
         public List<DossierReservation> Dossiers { get; set; }
-        //SA MARCHE - CRIS
+        
         public override string ToString()
         {
             return $"({Id}) {Nom.ToUpper()},{Prenom.ToLower()} - Ad. {Adresse}";

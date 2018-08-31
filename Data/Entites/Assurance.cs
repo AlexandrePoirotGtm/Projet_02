@@ -10,6 +10,7 @@ namespace Data
     [Table("Assurances")]
     public class Assurance
     {
+
         public int Id { get; set; }
         public TypeAssurance TypeAssurance { get; set; }
         public decimal Montant { get; set; }

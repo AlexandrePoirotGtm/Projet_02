@@ -131,5 +131,26 @@ namespace Data.Service
             }
         }
 
+        /// <summary>
+        /// méthode pour trier des client par Prenom. Cherche pour son Prenom.
+        /// </summary>
+        public IEnumerable<Client> TrierClientParPrenom( )
+        {
+            using (var contexte = new Contexte())
+            {
+                return contexte.Client.OrderBy(x => x.Prenom).ToList();
+            }
+        }
+        /// <summary>
+        /// méthode pour trier des client par Prenom. Cherche pour son Prenom.
+        /// </summary>
+        public IEnumerable<Client> TrierClientParNol()
+        {
+            using (var contexte = new Contexte())
+            {
+                return contexte.Client.OrderBy(x => x.Nom).ToList();
+            }
+        }
+
     }
 }
