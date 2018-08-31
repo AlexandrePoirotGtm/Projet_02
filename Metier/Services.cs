@@ -25,5 +25,17 @@ namespace Metier
             ServiceClient serviceClient = new ServiceClient();
             serviceClient.CreerClient(cli);
         }
+
+        public static void CreerAssurance(decimal montant,TypeAssurance typeAssurance)
+        {
+            Assurance assurance = new Assurance
+            {
+                Montant = montant,
+                TypeAssurance = typeAssurance
+            };
+
+            ServiceAssurance serviceAssurance = new ServiceAssurance();
+            serviceAssurance.CreerAssurance(assurance);
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BoVoyage.Framework.UI;
+using Data;
 
 namespace Projet_02
 {
@@ -14,6 +15,41 @@ namespace Projet_02
         {
             Console.WriteLine(question);
             return Console.ReadLine();
+        }
+        
+        public static TypeAssurance PosezTypeAssurance(string question)
+        {
+            Console.WriteLine(question);
+            string re = Console.ReadLine();
+            TypeAssurance typeAssurance;
+           /* if (Enum.TryParse(re, true, out typeAssurance))
+            {
+                if (Enum.IsDefined(typeof(TypeAssurance), typeAssurance))
+                {
+
+                    re = Console.ReadLine();
+                }
+            }
+            else
+            {
+                do
+                {
+                    Console.WriteLine("erreur réessayer : ");
+                    re = Console.ReadLine();
+                } while (!(Enum.IsDefined(typeof(TypeAssurance), typeAssurance)));
+            }
+            //return typeAssurance;
+            
+            string reponse;
+            Console.WriteLine(question);
+            reponse = Console.ReadLine();*/
+            while (!(Enum.TryParse(re, true, out typeAssurance)) | (!(Enum.IsDefined(typeof(TypeAssurance), typeAssurance))))
+            {
+                ConsoleHelper.AfficherMessageErreur("Reponse Obligatoire\nVeuillez Recommancer : ");
+                Console.WriteLine(question);
+                re = Console.ReadLine();
+            };
+            return typeAssurance;
         }
 
         public static string PosezQuestionObligatoire(string question)
