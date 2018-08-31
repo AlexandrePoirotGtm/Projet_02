@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
+    [Table("Participants")]
     public class Participant : Personne
     {
         

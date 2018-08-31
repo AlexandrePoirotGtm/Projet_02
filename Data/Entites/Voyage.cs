@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
+    [Table("Voyages")]
     public class Voyage
     {
         public int Id { get; set; }

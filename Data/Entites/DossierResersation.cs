@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Data
 {
+    [Table("DossierReservations")]
     public class DossierReservation
     {
         public DossierReservation()
@@ -50,8 +51,8 @@ namespace Data
 
         [NotMapped]
         public List<Participant> Participants { get; set; }
-       
 
+        [NotMapped]        
         public List<Assurance> Assurances { get; set; }
 
 
