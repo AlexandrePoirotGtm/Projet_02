@@ -105,19 +105,31 @@ namespace Data.Service
             return trouver;
         }
         /// <summary>
-        /// méthode pour voir si un client est dans la base. Cherche pour son Nom.
+        /// méthode pour afficher des client. Cherche pour son Nom.
         /// </summary>
-        public bool ChercherClientParNom(string nomClient)
+        public IEnumerable<Client> FiltrerClientParNom(string nomClient)
         {
-            bool trouver = false;
             using (var contexte = new Contexte())
             {
-                var client = (from c in contexte.Client
-                              where c.Nom == nomClient
-                              select c).Count();
-                if (client != 0) { trouver = true; }
+                var clients = (from c in contexte.Client
+                               where c.Nom == nomClient
+                               select c).ToList();
+                return clients;
             }
-            return trouver;
         }
+        /// <summary>
+        /// méthode pour afficher des client. Cherche pour son Prenom.
+        /// </summary>
+        public IEnumerable<Client> FiltrerClientParPrenom(string prenomClient)
+        {
+            using (var contexte = new Contexte())
+            {
+                var clients = (from c in contexte.Client
+                               where c.Prenom == prenomClient
+                               select c).ToList();
+                return clients;
+            }
+        }
+
     }
 }

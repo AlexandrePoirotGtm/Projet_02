@@ -90,15 +90,18 @@ namespace Data.Service
             }
         }
         /// <summary>
-        /// méthode pour Modifier une agence
+        /// méthode pour Modifier une agence.
         /// </summary>
-        /// <param name="idAgence">identifiant de l'agence</param>
+        /// <param name="agenceVoyage ">modification de l'agence par OBJ</param>
         /// <returns></returns>
-        public void ModifierAgence(AgenceVoyage ag)
+        public void ModifierAgence(AgenceVoyage agenceVoyage)
         {
             using (var contexte = new Contexte())
             {
-               //TODO
+                contexte.AgenceVoyages.Attach(agenceVoyage);
+                contexte.Entry(agenceVoyage).State = EntityState.Modified;
+                contexte.SaveChanges();
+
             }
         }
     }

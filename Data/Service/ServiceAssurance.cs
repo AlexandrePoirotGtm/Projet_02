@@ -25,7 +25,7 @@ namespace Data.Service
         /// <summary>
         /// méthode pour afficher une instance de la table Assurance
         /// </summary>
-        public Assurance GetAgence(int idAssurance)
+        public Assurance GetAssurance(int idAssurance)
         {
             using (var contexte = new Contexte())
             {
@@ -59,6 +59,21 @@ namespace Data.Service
                               select assu).Single();
                 contexte.Assurances.Remove(assurance);
                 contexte.SaveChanges();
+            }
+        }
+        /// <summary>
+        /// méthode pour Modifier une assurance.
+        /// </summary>
+        /// <param name="assurance">modification de l'assurance par OBJ</param>
+        /// <returns></returns>
+        public void ModifierAssurance(Assurance assurance)
+        {
+            using (var contexte = new Contexte())
+            {
+                contexte.Assurances.Attach(assurance);
+                contexte.Entry(assurance).State = EntityState.Modified;
+                contexte.SaveChanges();
+
             }
         }
     }
