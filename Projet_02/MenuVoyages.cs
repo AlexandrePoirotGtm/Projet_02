@@ -53,8 +53,8 @@ namespace Projet_02
             OutilsConsole.PosezQuestionObligatoire("Quel Destination : ");
             OutilsConsole.PosezDate("Date d'aller : ");
             OutilsConsole.PosezDate("Date de retour  : ");
-            OutilsConsole.PosezQuestionObligatoire("Nombres de place disponible  : ");
-            OutilsConsole.PosezQuestionObligatoire("Prix Par personne  : ");
+            OutilsConsole.PosezNombre("Nombres de place disponible  : ");
+            OutilsConsole.PosezPrix("Prix Par personne  : ");
         }
 
         private void AfficherVoyages()

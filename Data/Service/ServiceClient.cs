@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace Data.Service
 {
-    public  class ServiceClient
+    public class ServiceClient
     {
         /// <summary>
             /// méthode pour afficher des instances de la table client
