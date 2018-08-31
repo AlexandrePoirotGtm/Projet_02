@@ -36,20 +36,21 @@ namespace Projet_02
         private void CreerVoyage()
         {
             ConsoleHelper.AfficherEntete("Création d'un voyage");
-            Voyage voyage = new Voyage
-            {
-                DateAller = OutilsConsole.PosezDate("Date d'aller : "),
-                DateRetour = OutilsConsole.PosezDate("Date de retour  : "),
-                PlacesDisponibles = OutilsConsole.PosezNombre("Nombres de place disponible  : "),
-                PrixParPersonne = OutilsConsole.PosezPrix("Prix Par personne  : "),
-            };
             
             Console.WriteLine("Ce voyage appartient à quelle Agence : ");
-            voyage.IdAgenceVoyage = Affichage.AfficherListeAgences();
+            int IdAgenceVoyage = Affichage.AfficherListeAgences();
             Console.WriteLine("Quel Destination : ");
-            voyage.IdDestination = Affichage.AfficherListeDestinations();
+            int IdDestination = Affichage.AfficherListeDestinations();
 
-            ServiceVoyage.CreerVoyage(voyage);
+            DateTime DateAller = OutilsConsole.PosezDate("Date d'aller : ");
+            DateTime DateRetour = OutilsConsole.PosezDate("Date de retour  : ");
+            int PlacesDisponibles = OutilsConsole.PosezNombre("Nombres de place disponible  : ");
+            decimal PrixParPersonne = OutilsConsole.PosezPrix("Prix Par personne  : ");
+            
+
+            
+
+            Services.CreerVoyages(IdAgenceVoyage,IdDestination,DateAller,DateRetour,PlacesDisponibles,PrixParPersonne);
         }
 
         private void AfficherVoyages()

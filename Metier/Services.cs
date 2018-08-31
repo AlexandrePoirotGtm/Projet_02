@@ -59,11 +59,17 @@ namespace Metier
             ServiceAgenceVoyage.CreerAgence(agenceVoyage);
         }
     
-        public static void CreerVoyages()
+        public static void CreerVoyages(int idAgenceVoyage,int idDestination,DateTime dateAller, DateTime dateRetour, int placesDisponibles, decimal prixParPersonne)
         {
-            
-        }
-
-     
+            Voyage voyage = new Voyage
+            {
+            DateAller = dateAller,
+            DateRetour = dateRetour,
+            PlacesDisponibles = placesDisponibles,
+            PrixParPersonne = prixParPersonne,
+            IdAgenceVoyage = idAgenceVoyage,
+            IdDestination = idDestination,
+        };
+            ServiceVoyage.CreerVoyage(voyage);
     }
 }

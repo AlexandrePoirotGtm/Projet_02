@@ -24,7 +24,7 @@ namespace Projet_02
             {
                 FonctionAExecuter = this.AfficherDossier
             });
-            menu.AjouterElement(new ElementMenu("2", "Créer")
+            menu.AjouterElement(new ElementMenu("2", "Créer/Réservation")
             {
                 FonctionAExecuter = this.CréerDossier
             });
